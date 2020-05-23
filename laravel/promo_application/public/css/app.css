@@ -1,0 +1,24 @@
+html {
+  cursor: none;
+}
+
+@media (any-pointer: fine) {
+  .cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: block;
+    pointer-events: none;
+    opacity: 0;
+    z-index: 2000;
+  }
+
+  .cursor__inner {
+    fill: rgba(241, 173, 133, 0.7);
+    stroke: none;
+    stroke-width: 5px;
+    border-radius: 30% 70% 70% 30%/30% 30% 70% 70%;
+    mix-blend-mode: screen;
+  }
+}
+
