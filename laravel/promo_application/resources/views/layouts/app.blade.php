@@ -23,7 +23,42 @@
 
 <body>
     <div id="app">
+        <header>
+            <div class="header-hero-image">
+                <img src="{{ url('/images/header-main.png') }}" alt="">
+                <div class="header-img-overlay"></div>
+                <div class="header-content">
+                    <div class="header-top">
+                        <nav>
+                            <ul>
+                                <a href="">
+                                    <li>Home</li>
+                                </a>
+                                <a href="">
+                                    <li>About</li>
+                                </a>
+                                <a href="">
+                                    <li>Blog</li>
+                                </a>
+                                <a href="">
+                                    <li>Contact</li>
+                                </a>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="header-bottom">
+                        <h1 class="brand-name">Sleep Orbit</h1>
+                        <h2 class="brand-baseline">Relax with ease</h2>
+                    </div>
+                </div>
+            </div>
+        </header>
         <main>
+            <div class="short-page-intro">
+                <p>Sleep Orbit’s relaxing collection of sounds might just
+                    be the perfect solution to regain control of your
+                    impetuous brain.</p>
+            </div>
             @yield('content')
         </main>
 
@@ -35,9 +70,9 @@
                         in2="warp" />
                 </filter>
             </defs>
-            <circle class="cursor__inner" cx="140" cy="140" r="50" />
-            {{-- <circle class="cursor__outer" cx="140" cy="140" r="20" /> --}}
+            <circle class="cursor__inner" cx="140" cy="140" r="100" />
         </svg>
+
 
     </div>
 </body>

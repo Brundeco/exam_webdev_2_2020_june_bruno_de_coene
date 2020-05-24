@@ -1,0 +1,30 @@
+/* Colors */
+$base-red: #C10E1A;
+$base-yellow: #F8DC28;
+$base-black: #000;
+// $base-white: #f5f4e5;
+$base-white: #fff;
+$base-grey :rgb(160, 160, 160);
+
+$soft-green : #F4F6E3;
+$pastel-yellow: #FEFAD4;
+$pastel-green: #8FB9A8;
+$dark-green: #1C3B2E;
+$dark-green-blue: #1F4C54;
+
+$base-bg-color: #FFFFF4;
+$color-lightgrey: #C4C4C4;
+$no-color: rgba(1,1,1,0);
+$grey-variation: #757575;
+
+/* Fonts */
+$base-font:  montserrat, sans-serif;
+$base-heading-font: montserrat, sans-serif;
+$decorative-font: montserrat, sans-serif;
+
+/* Transitions */
+$base-transition: all .5s;
+$fast-transition: all .2s;
+$slow-transition: all 2s;
+$smooth-transition: width 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+$bezier-transition: all .2s cubic-bezier(0.200, 0.250, 0.925, 0.470);

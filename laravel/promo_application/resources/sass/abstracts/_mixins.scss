@@ -1,0 +1,33 @@
+@mixin short-page-intro {
+    text-align: center;
+    font-weight: 500;
+    font-style: italic;
+    font-size: 1.2em;
+    line-height: 2.3em;
+    text-transform: uppercase;
+}
+
+@mixin main-section-title {
+    font-weight: 600;
+    font-style: italic;
+    font-size: 2em;
+    line-height: 2.3em;
+    text-transform: uppercase;
+}
+
+@mixin main-paragraph {
+    font-weight: 100;
+    font-size: 0.9em;
+    line-height: 2.1em;
+}
+
+@mixin main-cta {
+    font-weight: 100;
+    font-size: 0.9em;
+    border: 1px solid $color-lightgrey;
+    height: 60px;
+    padding: 0 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
