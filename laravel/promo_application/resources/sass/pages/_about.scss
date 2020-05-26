@@ -1,0 +1,47 @@
+/* * * * * * * About Section * * * * * * */
+.about-section {
+    width: 100%;
+    min-height: 20vh;
+    position: relative;
+    margin: 25vh 0 45vh;
+}
+
+.about-left {
+    width: 75%;
+}
+
+.about-left h2 {
+    @include main-section-title;
+    margin-bottom: 50px;
+}
+
+.about-left p {
+    @include main-paragraph;
+    padding: 5vh 10% 5vh 0;
+    background-color: $base-white;
+    @include main-bg-shadow
+}
+
+.about-left .main-cta-light {
+    @include main-cta-light;
+    width: 200px;
+    transition: $fast-transition;
+    float: right;
+    margin-top: 50px;
+    &:hover {
+        border: 1px solid rgba($color: #000000, $alpha: 0);
+        transition: $fast-transition;
+        background: rgba(30, 30, 30, 0.1);
+    }
+}
+
+.about-right {
+    @include main-paragraph;
+    width: 65%;
+    height: 65%;
+    background-color: $medium-grey;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+}

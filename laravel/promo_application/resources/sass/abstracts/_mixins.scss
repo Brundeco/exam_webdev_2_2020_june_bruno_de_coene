@@ -70,3 +70,9 @@
     justify-content: center;
     align-items: center;
 }
+
+@mixin main-bg-shadow {
+    -webkit-box-shadow: 13px 10px 39px -4px rgba(217, 217, 217, 1);
+    -moz-box-shadow: 13px 10px 39px -4px rgba(217, 217, 217, 1);
+    box-shadow: 13px 10px 39px -4px rgba(217, 217, 217, 1);
+}

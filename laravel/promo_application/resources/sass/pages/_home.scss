@@ -8,7 +8,6 @@
 
 .asmr-left {
     width: 55vw;
-    padding-left: 7vw;
 }
 
 .asmr-left-content {
@@ -57,9 +56,9 @@
 /* * * * * * * Newsletter Section * * * * * * */
 
 .newsletter-section {
-    padding: 0 7vw;
+    // padding: 0 7vw;
     height: 100vh;
-    width: 100vw;
+    width: 100%;
     // background-color: pink;
     display: flex;
     flex-direction: column;
@@ -82,7 +81,7 @@
     top: 0;
     left: 0;
     width: 68%;
-    height: 60%;
+    height: 70%;
     background-color: $soft-grey;
     display: flex;
     justify-content: center;
@@ -108,7 +107,7 @@
 }
 
 .newsletter-left form h3 {
-    font-weight: 400;
+    font-weight: 200;
     font-size: 1em;
 }
 
@@ -120,7 +119,7 @@
     padding-left: 10px;
     font-weight: 200;
     font-size: 0.9em;
-    margin-bottom: 40px;
+    margin-bottom: 60px;
     outline: none;
 }
 

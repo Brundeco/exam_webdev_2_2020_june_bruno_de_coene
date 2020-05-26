@@ -31,16 +31,16 @@
                     <div class="header-top">
                         <nav>
                             <ul>
-                                <a href="">
+                                <a href="/">
                                     <li>Home</li>
                                 </a>
-                                <a href="">
+                                <a href="/about">
                                     <li>About</li>
                                 </a>
-                                <a href="">
+                                <a href="/blog">
                                     <li>Blog</li>
                                 </a>
-                                <a href="">
+                                <a href="/contact">
                                     <li>Contact</li>
                                 </a>
                             </ul>
