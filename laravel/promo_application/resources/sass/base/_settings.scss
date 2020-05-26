@@ -4,38 +4,39 @@
 
 // General
 * {
+    scroll-behavior: smooth;
     font-family: $base-font;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-  }
-  
-  body {
+}
+
+body {
     background: $base-white !important;
-  }
-  
-  li {
+}
+
+li {
     list-style: none;
-  }
-  
-  a {
+}
+
+a {
     text-decoration: none;
     color: $base-black;
     display: block;
-  }
-  
-  p {
+}
+
+p {
     line-height: 1.6em;
-  }
-  
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: $base-heading-font;
-  }
+}
 
 @media (any-pointer: fine) {
     .cursor {
@@ -58,7 +59,7 @@
 }
 
 .main-wrapper {
-  margin: 0 auto;
-  // padding: 0 7vw ;
-  max-width: 1200px;
+    margin: 0 auto;
+    // padding: 0 7vw ;
+    max-width: 1200px;
 }

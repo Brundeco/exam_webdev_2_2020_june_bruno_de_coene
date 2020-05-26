@@ -43,11 +43,6 @@
     @include main-cta-light;
     width: 200px;
     transition: $fast-transition;
-    &:hover {
-        border: 1px solid rgba($color: #000000, $alpha: 0);
-        transition: $fast-transition;
-        background: rgba(30, 30, 30, 0.1);
-    }
 }
 
 
@@ -98,12 +93,6 @@
 
 .newsletter-left form .main-cta-dark {
     @include main-cta-dark;
-    &:hover {
-        border: 1px solid rgba($color: #000000, $alpha: 0);
-        transition: $fast-transition;
-        background: rgba(30, 30, 30, 0.1);
-        color: $base-black; 
-    }
 }
 
 .newsletter-left form h3 {

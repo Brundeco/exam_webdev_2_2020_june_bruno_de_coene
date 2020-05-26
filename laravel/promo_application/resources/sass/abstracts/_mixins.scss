@@ -38,6 +38,14 @@
     line-height: 2.1em;
 }
 
+@mixin paragraph-intro {
+    font-style: italic;
+    line-height: 1.9em;
+    margin-bottom: 50px;
+    display: block;
+    font-weight: 400;
+}
+
 @mixin footer-listitems {
     font-weight: 100;
     font-size: 0.9em;
@@ -55,6 +63,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    &:hover {
+        border: 1px solid rgba($color: #000000, $alpha: 0);
+        transition: $fast-transition;
+        background: rgba(30, 30, 30, 0.1);
+        color: $base-black;
+    }
 }
 
 @mixin main-cta-dark {
@@ -69,10 +83,18 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    &:hover {
+        &:hover {
+            border: 1px solid rgba($color: #000000, $alpha: 0);
+            transition: $fast-transition;
+            background: rgba(30, 30, 30, 0.1);
+            color: $base-black;
+        }
+    }
 }
 
 @mixin main-bg-shadow {
-    -webkit-box-shadow: 13px 10px 39px -4px rgba(217, 217, 217, 1);
-    -moz-box-shadow: 13px 10px 39px -4px rgba(217, 217, 217, 1);
-    box-shadow: 13px 10px 39px -4px rgba(217, 217, 217, 1);
+    -webkit-box-shadow: 25px 10px 39px -4px #f1f1f1;
+    -moz-box-shadow: 25px 10px 39px -4px #f1f1f1;
+    box-shadow: 25px 10px 39px -4px #f1f1f1;
 }

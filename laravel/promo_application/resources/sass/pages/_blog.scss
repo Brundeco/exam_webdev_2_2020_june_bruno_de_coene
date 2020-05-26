@@ -1,0 +1,69 @@
+/* * * * * * * Blog Section * * * * * * */
+.blogpost-wrapper {
+    height: 80vh;
+    width: 100vw;
+    display: flex;
+    margin: 25vh 0 ;
+}
+
+.blogpost-left {
+    width: 50%;
+    height: 100%;
+    position: relative;
+}
+
+.blogpost-image {
+    width: 85%;
+    height: 90%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.blogpost-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.blogpost-color-bg {
+    width: 60%;
+    height: 50%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: $medium-grey;
+}
+
+.blogpost-right {
+    width: 50%;
+    height: 100%;
+    position: relative;
+}
+
+.blogpost-right h2 {
+    @include main-section-title;
+    line-height: 30px;
+    margin-bottom: 40px;
+}
+
+.blogpost-text-wrapper {
+    height: 70%;
+    width: 110%;
+    background-color: $base-white;
+    padding: 10%;
+    margin-left: -30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    @include main-bg-shadow;
+}
+
+.blogpost-text-wrapper p {
+    @include main-paragraph;
+}
+
+.blogpost-text-wrapper a {
+    @include main-cta-light;
+    width: 150px;
+}

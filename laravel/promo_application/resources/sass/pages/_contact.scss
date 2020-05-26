@@ -1,0 +1,62 @@
+/* * * * * * * Contact Section * * * * * * */
+.contact-section {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    margin: 25vh 0 45vh;
+    background-image: url("/images/contact-form-bg-image.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-wrapper {
+    max-width: 1200px;
+    width: 80%;
+    height: 80%;
+    background-color: $base-white;
+}
+
+.form-box-left, .form-box-right {
+    width: 45%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.contact-wrapper form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 80%;
+}
+
+.contact-wrapper form p {
+    @include main-paragraph;
+}
+
+.contact-wrapper form input {
+    height: 40px;
+    width: 75%;
+    background: rgba(0, 0, 0, 0);
+    border: 1px solid grey;
+    padding-left: 10px;
+    font-weight: 200;
+    font-size: 0.9em;
+    outline: none;
+}
+
+.contact-wrapper form textarea {
+    width: 75%;
+    outline: none;
+}
+
+.contact-wrapper form .main-cta-light {
+    @include main-cta-dark;
+    height: 60px;
+    width: 75%;
+}

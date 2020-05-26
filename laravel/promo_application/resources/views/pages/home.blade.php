@@ -20,7 +20,7 @@
                     ASMR content professionally on social media. The App Store is now
                     home to an array of ASMR apps. But what has earned it so much
                     attention?</p>
-                <a class="main-cta-light" href="">More info</a>
+                <a class="main-cta-light" href="/about">More info</a>
             </div>
         </div>
         <div class="asmr-right">
