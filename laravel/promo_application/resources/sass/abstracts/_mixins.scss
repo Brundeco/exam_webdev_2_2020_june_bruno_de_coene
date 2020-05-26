@@ -7,6 +7,13 @@
     text-transform: uppercase;
 }
 
+@mixin brand-name {
+    font-style: italic;
+    font-weight: 600;
+    font-size: 3.1em;
+    text-transform: uppercase;
+}
+
 @mixin main-section-title {
     font-weight: 600;
     font-style: italic;
@@ -15,17 +22,49 @@
     text-transform: uppercase;
 }
 
+@mixin small-italic-title {
+    font-weight: 600;
+    font-style: italic;
+    font-size: 1.1em;
+    line-height: 2.3em;
+    text-transform: uppercase;
+    color: $base-white;
+    margin-bottom: 30px;
+}
+
 @mixin main-paragraph {
     font-weight: 100;
     font-size: 0.9em;
     line-height: 2.1em;
 }
 
-@mixin main-cta {
+@mixin footer-listitems {
     font-weight: 100;
     font-size: 0.9em;
-    border: 1px solid $color-lightgrey;
+    color: $base-white;
+    margin-bottom: 15px;
+    line-height: 1.8em;
+}
+
+@mixin main-cta-light {
+    font-weight: 100;
+    font-size: 0.9em;
+    border: 1px solid $lightgrey;
     height: 60px;
+    padding: 0 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin main-cta-dark {
+    font-weight: 100;
+    font-size: 0.9em;
+    border: 1px solid $base-black;
+    background-color: $base-black;
+    color: $soft-grey;
+    height: 60px;
+    min-width: 150px;
     padding: 0 20px;
     display: flex;
     justify-content: center;

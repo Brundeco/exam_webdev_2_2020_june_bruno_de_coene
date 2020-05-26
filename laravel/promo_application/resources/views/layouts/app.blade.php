@@ -48,15 +48,16 @@
                     </div>
                     <div class="header-bottom">
                         <h1 class="brand-name">Sleep Orbit</h1>
-                        <h2 class="brand-baseline">Relax with ease</h2>
+                        <h2 class="brand-baseline">The beauty of ASMR</h2>
                     </div>
                 </div>
             </div>
         </header>
+
         <main>
             <div class="short-page-intro">
                 <p>Sleep Orbit’s relaxing collection of sounds might just
-                    be the perfect solution to regain control of your
+                    be the perfect solution to regain control over your
                     impetuous brain.</p>
             </div>
             @yield('content')
@@ -73,7 +74,46 @@
             <circle class="cursor__inner" cx="140" cy="140" r="100" />
         </svg>
 
-
+        <footer>
+            <div class="footer-fx">
+                <div class="footer-img-overlay"></div>
+            </div>
+            <div class="footer-wrapper">
+                <div class="footer-top">
+                    <div class="footer-left">
+                        <h2>Sleep Orbit</h2>
+                    </div>
+                    <div class="footer-right">
+                        <div class="footer-content">
+                            <h3>Get in Touch</h3>
+                            <ul>
+                                <a href="">
+                                    <li>hello@sleeporbit.com</li>
+                                </a>
+                                <a href="">
+                                    <li>Tel. 0496 47 46 66</li>
+                                </a>
+                                <a href="">
+                                    <li>Willem Van Nassaustraat 31,<br>
+                                        9000 Gent</li>
+                                </a>
+                            </ul>
+                        </div>
+                        <div class="footer-content">
+                            <h3>Privacy Policy</h3>
+                            <ul>
+                                <a href="">
+                                    <li>Privacy</li>
+                                </a>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>© 2020 by Sleep Orbit. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
     </div>
 </body>
 

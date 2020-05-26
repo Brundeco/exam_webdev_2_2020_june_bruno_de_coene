@@ -58,15 +58,14 @@
     height: 60%;
 }
 
-.brand-name, .brand-baseline {
+.brand-name,
+.brand-baseline {
     color: $base-white;
 }
 
 .brand-name {
-    font-style: italic;
-    font-weight: 600;
-    font-size: 4em;
-    margin-bottom: 20px;
+    @include brand-name;
+    margin-bottom: 10px;
 }
 
 .brand-baseline {
@@ -80,9 +79,5 @@
 }
 
 .short-page-intro p {
-   @include short-page-intro;
-}
-
-.short-page-intro a {
-    @include main-cta;
+    @include short-page-intro;
 }
