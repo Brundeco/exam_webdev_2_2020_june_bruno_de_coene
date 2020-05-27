@@ -26,6 +26,7 @@
 
         <main>
             @yield('content')
+            <h1>Commits not pushing to remote repo ... </h1>
         </main>
 
         <svg class="cursor" width="280" height="280" viewBox="0 0 280 280">
