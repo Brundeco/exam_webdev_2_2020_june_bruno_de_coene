@@ -23,4 +23,13 @@ Route::get('/blog/{id}', 'BlogController@getShow')->name('blog_detail');
 Route::get('/contact', 'PageController@contact')->name('contact');
 
 Route::get('posts', 'PostsController@getIndex')->name('projects');
+// Auth::routes();
 
+// Route::get('/', 'HomeController@index')->name('home');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
