@@ -1,0 +1,42 @@
+.login-container {
+    display: flex;
+    background: #eaeaea;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-wrapper {
+    width: 40%;
+}
+
+.card-header {
+    @include main-section-title;
+}
+
+.form-control {
+    height: 40px;
+    width: 100%;
+    background: rgba(0, 0, 0, 0);
+    border: 1px solid grey;
+    padding-left: 10px;
+    font-weight: 200;
+    font-size: 0.9em;
+    outline: none;
+    margin: 10px 0 20px;
+}
+
+.login.main-cta-dark {
+    @include main-cta-dark;
+    width: 100%;
+    margin: 10px 0px 20px;
+    font-weight: 300;
+}
+
+.login.main-cta-light {
+    @include main-cta-light;
+    width: 100%;
+    margin: 10px 0px 20px;
+    font-weight: 300;
+}
