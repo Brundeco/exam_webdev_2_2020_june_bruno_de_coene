@@ -5,22 +5,9 @@
     <div class="asmr-section">
         <div class="asmr-left">
             <div class="asmr-left-content">
-                <h2>What is asmr anyway?</h2>
-                <p>The patter of water droplets hitting the ground; the crisp crushing of
-                    a metallic can; the squeaks of air being blown into a balloon.
-                    Familiar sounds, sure. But do any of them help you to relax? If they
-                    do, then you’ve experienced ASMR (autonomous sensory meridian
-                    response).<br><br>
-                    ASMR. It’s everywhere lately. On TV, on our devices and articles on it
-                    feature in various publications. There are even people who create
-                    ASMR content professionally on social media. The App Store is now
-                    home to an array of ASMR apps. But what has earned it so much
-                    attention? ASMR. It’s everywhere lately. On TV, on our devices and articles on it
-                    feature in various publications. There are even people who create
-                    ASMR content professionally on social media. The App Store is now
-                    home to an array of ASMR apps. But what has earned it so much
-                    attention?</p>
-                <a class="main-cta-light" href="/about">More info</a>
+            <h2>{{ $data['section_title'] }}</h2>
+                <p> {{ $data['section_content'] }} </p>
+            <a class="main-cta-light" href="/about"> {{ $data['button_text'] }}</a>
             </div>
         </div>
         <div class="asmr-right">

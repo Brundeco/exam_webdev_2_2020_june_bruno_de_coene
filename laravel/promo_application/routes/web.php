@@ -13,29 +13,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'PageController@home')->name('home');
-
-Route::get('/about', 'PageController@about')->name('about');
-
-Route::get('/blog', 'BlogController@getIndex')->name('blog');
-Route::get('/blog/{id}', 'BlogController@getShow')->name('blog_detail');
-
+Route::get('/', 'PageController@getHomeContent')->name('home');
+Route::get('/about', 'PageController@getAboutContent')->name('about');
+Route::get('/blog', 'PostsController@getIndex')->name('blog');
+Route::post('/blog/donate', 'PostsController@postDonate')->name('blog_donate');
+Route::get('/blog/{id}/show', 'PostsController@getShow')->name('blog_detail');
 Route::get('/contact', 'PageController@contact')->name('contact');
 
-Route::get('posts', 'PostsController@getIndex')->name('projects');
-// Auth::routes();
-
-// Route::get('/', 'HomeController@index')->name('home');
 Auth::routes(['verify' => true]);
 
 Route::group(['middleware' => ['verified']], function () {
     Route::get('/about/edit', 'PageController@about')->name('about');
+    Route::get('/blog/edit', 'PostsController@getEdit')->name('blog_edit');
 } );
-
-
-
-
-
 
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('login', 'Auth\LoginController@login');

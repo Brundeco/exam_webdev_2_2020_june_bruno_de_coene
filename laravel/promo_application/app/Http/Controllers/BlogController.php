@@ -8,7 +8,12 @@ class BlogController extends Controller
 {
     public function getIndex() {
 
-        return view('pages/blog');
+        return view('pages/blog', [
+            'data' => [
+                'first' => 'Number one',
+                'second' => 'Number two'
+            ]
+        ]);
     }
 
     public function getShow() {

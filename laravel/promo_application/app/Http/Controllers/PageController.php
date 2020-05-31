@@ -2,28 +2,26 @@
 
 namespace App\Http\Controllers;
 
+use \App\Contents;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
-    public function home() {
+    public function getHomeContent() {
         
-        $page_intro = 'This title is a variable';
+        $data = Contents::get()->where('page', 'home')->pluck('content', 'name');
 
-        return view('pages/home', [
-            'page_intro' => $page_intro
+         return view('pages.home', [
+            'data' => $data
         ]);
     }
 
-    public function about() {
-        return view('pages/about');
-    }
+    public function getAboutContent() {
+        
+        $data = Contents::get()->where('page', 'about')->pluck('content', 'name');
 
-    public function blog() {
-        return view('pages/blog');
-    }
-
-    public function contact() {
-        return view('pages/contact');
+         return view('pages.about', [
+            'data' => $data
+        ]);
     }
 }

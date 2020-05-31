@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Contents;
 
 class HomeController extends Controller
 {
@@ -21,8 +22,14 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function getIndex()
     {
-        return view('home');
+
+        dd('Correcte mundo ! !');
+
+        // $content = Contents::table('contents')->where('page', 'home');
+
+        // dd($content);
+        // return view('home');
     }
 }
