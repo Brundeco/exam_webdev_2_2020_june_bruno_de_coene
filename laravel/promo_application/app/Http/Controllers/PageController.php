@@ -2,14 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use \App\Contents;
+use \App\Page;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
     public function getHomeContent() {
         
-        $data = Contents::get()->where('page', 'home')->pluck('content', 'name');
+        $data = Page::get()->where('page_title', 'home')->first();
+
+        // dd($data);
 
          return view('pages.home', [
             'data' => $data
@@ -18,7 +20,9 @@ class PageController extends Controller
 
     public function getAboutContent() {
         
-        $data = Contents::get()->where('page', 'about')->pluck('content', 'name');
+        $data = Page::get()->where('page_title', 'about')->first();
+
+        // dd($data);
 
          return view('pages.about', [
             'data' => $data

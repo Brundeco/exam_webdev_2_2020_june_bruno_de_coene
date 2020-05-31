@@ -23,6 +23,12 @@ Route::get('/contact', 'PageController@contact')->name('contact');
 Auth::routes(['verify' => true]);
 
 Route::group(['middleware' => ['verified']], function () {
+
+    Route::get('/admin', 'DashboardController@getIndexPages')->name('page.index');
+    Route::get('/pages/edit/{page}', 'DashboardController@getEditPage')->name('pages.edit');
+    Route::post('/pages/edit/{page}', 'DashboardController@postEditPage')->name('pages.edit.post');
+    Route::post('/pages/delete/{page}', 'DashboardController@getDeletePage')->name('pages.delete');
+
     Route::get('/about/edit', 'PageController@about')->name('about');
     Route::get('/blog/edit', 'PostsController@getEdit')->name('blog_edit');
 } );

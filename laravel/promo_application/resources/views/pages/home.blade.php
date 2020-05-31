@@ -1,13 +1,16 @@
 @extends('layouts.app')
 
 @section('content')
+
+{{-- {{ dd($data) }} --}}
+
 <div class="main-wrapper">
     <div class="asmr-section">
         <div class="asmr-left">
             <div class="asmr-left-content">
-            <h2>{{ $data['section_title'] }}</h2>
-                <p> {{ $data['section_content'] }} </p>
-            <a class="main-cta-light" href="/about"> {{ $data['button_text'] }}</a>
+            <h2>{{ $data->section_title }}</h2>
+                <p> {{ $data->content }} </p>
+            <a class="main-cta-light" href="/about"> {{ $data->button_text }}</a>
             </div>
         </div>
         <div class="asmr-right">

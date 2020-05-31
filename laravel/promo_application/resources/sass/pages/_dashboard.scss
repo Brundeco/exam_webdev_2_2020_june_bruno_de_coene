@@ -1,0 +1,64 @@
+.table-wrapper {
+    padding: 2% 10%;
+}
+
+.flex-cell {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.admin-btn.btn-1 {
+    margin-right: 15px;
+    border: 1px solid darkgrey;
+    padding: 5px 10px;
+    border-radius: 3px;
+    color: black;
+    transition: 0.2s ease-in-out;
+    text-decoration: none;
+    height: 40px;
+    width: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &:hover {
+        color: white;
+        background-color: darkgrey;
+        transition: 0.2s ease-in-out;
+    }
+}
+
+.admin-btn.btn-2 {
+    height: 40px;
+    width: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgb(255, 72, 72);
+    padding: 5px 10px;
+    border-radius: 3px;
+    color: white;
+    background-color: rgb(255, 72, 72);
+    transition: 0.2s ease-in-out;
+    text-decoration: none;
+    &:hover {
+        color: rgb(255, 72, 72);
+        background-color: white;
+        transition: 0.2s ease-in-out;
+    }
+}
+
+.admin-form h2 {
+    display: block;
+    margin-bottom: 70px;
+    font-size: 1.7em;
+    font-weight: 400;
+    border-bottom: 1px solid lightgrey;
+    padding-bottom: 20px;
+}
+
+.admin-form h3 {
+    float: left;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    font-weight: 400;
+}
