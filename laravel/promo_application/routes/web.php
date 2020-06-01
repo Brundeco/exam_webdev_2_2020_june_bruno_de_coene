@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +24,8 @@ Route::get('/contact', 'PageController@getContactContent')->name('contact');
 Auth::routes(['verify' => true]);
 
 Route::group(['middleware' => ['verified']], function () {
+
+    Auth::check();
 
     Route::get('/admin', 'DashboardController@getIndexPages')->name('page.index');
     Route::get('/pages/edit/{page}', 'DashboardController@getEditPage')->name('pages.edit');
