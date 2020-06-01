@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Page;
+use App\Post;
 
 class DashboardController extends Controller
 {
@@ -35,7 +36,66 @@ class DashboardController extends Controller
         return redirect()->route('page.index');
     }
 
-    public function postDeletePage() {
+    public function getIndexBlog() {
+
+        $posts = Post::all();
+
+        // dd($posts);
         
+        return view('dashboard.blog.index', [
+            'posts' => $posts
+        ]);
     }
+
+    public function getEditBlog($id) {
+
+        $post = Post::find($id);
+        
+        return view('dashboard.blog.edit', [
+            'post' => $post
+        ]);
+    }
+
+    public function postEditBlog(Request $r, $id) {
+
+        // dd($r);
+
+        $post = Post::find($id);
+
+        $post->title = $r->post_title;
+        $post->intro = $r->post_intro;
+        $post->body = $r->post_body;
+        $post->slug = $r->post_title;
+
+        $post->save();
+
+        return redirect()->route('blog.index');
+    }
+
+    public function postDeleteBlog($id) {
+
+        // dd($r);
+
+        $post = Post::find($id);
+        $post-> delete();
+
+        return redirect()->route('blog.index');
+    }
+
+    public function postCreateBlog() {
+
+        // dd($r);
+
+        // $post = new Post();
+
+        // $post->title = $r->post_title;
+        // $post->intro = $r->post_intro;
+        // $post->body = $r->post_body;
+        // $post->slug = $r->post_title;
+
+        // $post->save();
+
+        // return redirect()->route('blog.index');
+    }
+
 }

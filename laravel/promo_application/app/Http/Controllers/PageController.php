@@ -28,4 +28,15 @@ class PageController extends Controller
             'data' => $data
         ]);
     }
+
+    public function getContactContent() {
+        
+        $data = Page::get()->where('page_title', 'contact')->first();
+
+        // dd($data);
+
+         return view('pages.about', [
+            'data' => $data
+        ]);
+    }
 }

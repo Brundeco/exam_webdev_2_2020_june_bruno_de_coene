@@ -16,9 +16,9 @@
     </div>
     <div class="blogdetail-textblock">
         <span> {{ $post->intro }} </span>
-        <p> {{  $post->intro }} </p>
+        <p> {{  $post->body }} </p>
     </div>
-    <a href="/blog" class="blogdetail main-cta-light">Back</a>
+<a href="{{ route('blog') }}" class="blogdetail main-cta-light">Back</a>
 
 </div>
 

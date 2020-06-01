@@ -2,7 +2,6 @@
 
 @section('content')
 
-<!-- Default form contact -->
 <form class=" border border-light p-5 admin-form" action="{{ route('pages.edit', $page->id) }}" method="post">
     @csrf
     <input type="hidden" value="{{ $page->id }}" name="id">

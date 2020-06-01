@@ -27,7 +27,7 @@ class PostsController extends Controller
     {
         $post = Post::find($id);
 
-        dd($post);
+        // dd($post);
         
         return view('pages.blog_detail', [
             'post' => $post

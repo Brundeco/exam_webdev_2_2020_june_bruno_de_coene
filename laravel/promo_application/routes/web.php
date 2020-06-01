@@ -17,8 +17,8 @@ Route::get('/', 'PageController@getHomeContent')->name('home');
 Route::get('/about', 'PageController@getAboutContent')->name('about');
 Route::get('/blog', 'PostsController@getIndex')->name('blog');
 Route::post('/blog/donate', 'PostsController@postDonate')->name('blog_donate');
-Route::get('/blog/{id}/show', 'PostsController@getShow')->name('blog_detail');
-Route::get('/contact', 'PageController@contact')->name('contact');
+Route::get('/blog/{id}/show', 'PostsController@getShow')->name('blog.show');
+Route::get('/contact', 'PageController@getContactContent')->name('contact');
 
 Auth::routes(['verify' => true]);
 
@@ -28,6 +28,13 @@ Route::group(['middleware' => ['verified']], function () {
     Route::get('/pages/edit/{page}', 'DashboardController@getEditPage')->name('pages.edit');
     Route::post('/pages/edit/{page}', 'DashboardController@postEditPage')->name('pages.edit.post');
     Route::post('/pages/delete/{page}', 'DashboardController@getDeletePage')->name('pages.delete');
+
+    Route::get('/blog/index', 'DashboardController@getIndexBlog')->name('blog.index');
+    Route::get('/blog/edit/{id}', 'DashboardController@getEditBlog')->name('blog.edit');
+    Route::post('/blog/edit/{id}', 'DashboardController@postEditBlog')->name('blog.edit.post');
+    Route::post('/blog/delete/{id}', 'DashboardController@postDeleteBlog')->name('blog.delete');
+    Route::get('/blog/create', 'DashboardController@postCreateBlog')->name('blog.create');
+    Route::get('/blog/save', 'DashboardController@postSaveBlog')->name('blog.save');
 
     Route::get('/about/edit', 'PageController@about')->name('about');
     Route::get('/blog/edit', 'PostsController@getEdit')->name('blog_edit');

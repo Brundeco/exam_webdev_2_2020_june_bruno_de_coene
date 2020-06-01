@@ -14,7 +14,7 @@
         <h2> {{ $item->title }} </h2>
         <div class="blogpost-text-wrapper">
             <p>{{ $item->intro }}</p>
-            <a href="/blog/1">Read more</a>
+            <a href="{{ route('blog.show', $item->id) }}">Read more</a>
         </div>
     </div>
 </div>
