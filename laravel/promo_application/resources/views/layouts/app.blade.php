@@ -39,10 +39,9 @@
                         @csrf
                     </form>
                 </div>
-
             </div>
-
             @endif
+            
             <div class="header-hero-image">
                 <img src="{{ url('/images/header-main.png') }}" alt="">
                 <div class="header-img-overlay"></div>

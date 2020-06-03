@@ -7,7 +7,7 @@
     <div class="blogpost-left">
         <div class="blogpost-color-bg"></div>
         <div class="blogpost-image">
-            <img src="{{ url('/images/header-main.png') }}" alt="">
+            <img src="{{ asset($item->image) }}" alt="">
         </div>
     </div>
     <div class="blogpost-right">

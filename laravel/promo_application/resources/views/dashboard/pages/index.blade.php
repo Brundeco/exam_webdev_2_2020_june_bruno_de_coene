@@ -26,7 +26,7 @@
                     {{-- <form action="{{ route('pages.delete', $item->id) }} method=" post"">
                         @csrf
                         <input type="hidden" value="{{ $item->id }}">
-                        <button class="admin-btn btn-2">Delete</button>
+                        <button class="admin-btn btn-delete">Delete</button>
                     </form> --}}
                 </td>
             </tr>

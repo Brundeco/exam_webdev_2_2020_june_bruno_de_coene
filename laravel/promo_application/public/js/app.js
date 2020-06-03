@@ -43432,7 +43432,7 @@ var Cursor = /*#__PURE__*/function (_EventEmitter) {
 
 var cursor = new Cursor(document.querySelector('.cursor'));
 
-_toConsumableArray(document.querySelectorAll('a')).forEach(function (el) {
+_toConsumableArray(document.querySelectorAll('a, button')).forEach(function (el) {
   el.addEventListener('mouseenter', function () {
     return cursor.emit('enter');
   });

@@ -10,7 +10,7 @@
         <div class="blogdetail-content">
             <div class="blogdetail-bg-color"></div>
             <div class="blogdetail-image">
-                <img src="{{ url('/images/blog-detail.jpg') }}" alt="">
+                <img src="{{ asset($post->image) }}" alt="">
             </div>
         </div>
     </div>

@@ -1,7 +1,7 @@
 .user-active {
-    padding: 40px;
+    padding: 20px;
     width: 100%;
-    height: 5vh;
+    height: auto;
     position: fixed;
     z-index: 100;
     background-color: rgba($color: $soft-grey, $alpha: 0.9);
@@ -11,14 +11,43 @@
     align-items: center;
     font-weight: 500;
     font-style: italic;
+    top: 0;
 }
 
 .right-margin-md {
     margin-right: 50px;
 }
 
+.right-padding-md {
+    padding-right: 50px;
+}
+
+.table {
+    margin-top: 50px;
+}
+
 .table-wrapper {
-    padding: 3rem!important;
+    padding: 3rem 20%;
+    margin-top: 70px;
+}
+
+td,
+th {
+    text-align: left;
+}
+
+tr {
+    padding-right: 50px;
+}
+
+input {
+    padding: 10px;
+}
+
+textarea {
+    padding: 10px;
+    height: auto;
+    width: 100%;
 }
 
 .flex-cell {
@@ -26,70 +55,12 @@
     justify-content: flex-start;
 }
 
-.admin-btn.btn-1 {
-    font-style: normal;
-    font-weight: 200;
-    margin-right: 15px;
-    border: 1px solid darkgrey;
-    padding: 5px 10px;
-    border-radius: 3px;
-    color: black;
-    transition: 0.2s ease-in-out;
-    text-decoration: none;
-    height: 40px;
-    width: 120px;
+.button-wrapper {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    &:hover {
-        color: white;
-        background-color: darkgrey;
-        transition: 0.2s ease-in-out;
-    }
 }
 
-.admin-btn.btn-2 {
-    font-style: normal;
-    font-weight: 200;
-    height: 40px;
-    width: 120px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid rgb(255, 72, 72);
-    padding: 5px 10px;
-    border-radius: 3px;
-    color: white;
-    background-color: rgb(255, 72, 72);
-    transition: 0.2s ease-in-out;
-    text-decoration: none;
-    &:hover {
-        color: rgb(255, 72, 72);
-        background-color: white;
-        transition: 0.2s ease-in-out;
-    }
-}
-
-.admin-btn.btn-3 a {
-    font-style: normal;
-    font-weight: 200;
-    height: 40px;
-    width: 120px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid $base-black;
-    padding: 5px 10px;
-    border-radius: 3px;
-    color: $base-white;
-    background-color: $base-black;
-    transition: 0.2s ease-in-out;
-    text-decoration: none;
-    &:hover {
-        background-color: $soft-grey;
-        transition: 0.2s ease-in-out;
-        color: $base-black;
-    }
+.admin-form {
+    padding: 0 20%;
 }
 
 .admin-form h2 {

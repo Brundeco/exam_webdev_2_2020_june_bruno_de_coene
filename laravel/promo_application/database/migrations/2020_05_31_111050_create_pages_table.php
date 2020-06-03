@@ -17,10 +17,12 @@ class CreatePagesTable extends Migration
             $table->id();
 
             $table->string('page_title');
+            $table->text('page_intro')->nullable();
 
             $table->string('section_title')->nullable();
             $table->text('section_intro')->nullable();
             $table->text('content')->nullable();
+            
             $table->string('button_text')->nullable();
 
             $table->timestamps();

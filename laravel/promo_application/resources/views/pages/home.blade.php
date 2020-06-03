@@ -8,9 +8,9 @@
     <div class="asmr-section">
         <div class="asmr-left">
             <div class="asmr-left-content">
-            <h2>{{ $data->section_title }}</h2>
+                <h2>{{ $data->section_title }}</h2>
                 <p> {{ $data->content }} </p>
-            <a class="main-cta-light" href="/about"> {{ $data->button_text }}</a>
+                <a class="main-cta-light" href="/about"> {{ $data->button_text }}</a>
             </div>
         </div>
         <div class="asmr-right">
@@ -27,18 +27,17 @@
                 <img src="{{ url('/images/newsletter-form-image.jpg') }}" alt="">
             </div>
             <div class="newsletter-left">
-                <form action="">
+                <form action="{{ route('subscribe') }}" method="post">
+                    @csrf
                     <div>
                         <h3>To keep up to date with news, pop-ups and events, subscribe to the newsletter.</h2>
                     </div>
                     <div>
                         <div>
-                            <input type="email" placeholder="Enter your email here">
+                            <input type="email" placeholder="Enter your email here" name="email">
                         </div>
                         <div>
-                            <a href="">
-                                <button class="main-cta-dark">Subscribe</button>
-                            </a>
+                            <button type="sumbit" class="main-cta-dark" text="submit">Submit</button>
                         </div>
                     </div>
                 </form>

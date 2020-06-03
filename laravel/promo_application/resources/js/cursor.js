@@ -96,7 +96,7 @@ export default class Cursor extends EventEmitter {
 
 const cursor = new Cursor(document.querySelector('.cursor'));
 
-[...document.querySelectorAll('a')].forEach(el => {
+[...document.querySelectorAll('a, button')].forEach(el => {
     el.addEventListener('mouseenter', () => cursor.emit('enter'));
     el.addEventListener('mouseleave', () => cursor.emit('leave'));
 });

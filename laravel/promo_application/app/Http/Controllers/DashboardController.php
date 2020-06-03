@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use App\Page;
 use App\Post;
 
@@ -84,18 +85,29 @@ class DashboardController extends Controller
 
     public function postCreateBlog() {
 
+        return view('dashboard.blog.create');
+    }
+
+    public function postStoreBlog(Request $r) {
+
         // dd($r);
 
-        // $post = new Post();
+        $post = new Post();
+        
+        $post->title = request('post_title');
+        $post->intro = request('post_intro');
+        $post->body = request('post_body');
+        $post->slug = Str::snake(request('post_title'));
+        $post->alt = request('alt');
+        $post->image = request()->image->store('uploads', 'public');
+        $post->image = '/storage/'.$post->image;
 
-        // $post->title = $r->post_title;
-        // $post->intro = $r->post_intro;
-        // $post->body = $r->post_body;
-        // $post->slug = $r->post_title;
+        // dd($post);
 
-        // $post->save();
+        $post->save();
 
-        // return redirect()->route('blog.index');
+        return redirect()->route('blog.index');
     }
 
 }
+

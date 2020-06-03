@@ -4,6 +4,9 @@
 
 <div class="table-wrapper">
     <table class="table">
+        <div>
+            <a class="admin-btn btn-1" href=" {{ route('blog.create') }} " class="btn">Create post</a>
+        </div>
         <thead class="thead-light">
             <tr>
                 <th scope="col">#</th>
@@ -12,21 +15,16 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>
-                    <a class="admin-btn btn-1" href=" {{ route('blog.create') }} " class="btn">Create post</a>
-                </td>
-            </tr>
             @foreach ($posts as $item)
             <tr>
-                <th scope="row"> {{ $item->id }} </th>
-                <td>{{ $item->title }}</td>
+                <th scope="row" class="right-padding-md"> {{ $item->id }} </th>
+                <td class="right-padding-md">{{ $item->title }}</td>
                 <td class="flex-cell">
                     <a class="admin-btn btn-1" href="{{ route('blog.edit', $item->id) }}" class="btn">Edit</a>
-                     <form action="{{ route('blog.delete', $item->id) }}" method="post">
+                    <form action="{{ route('blog.delete', $item->id) }}" method="post">
                         @csrf
                         <input type="hidden" value="{{ $item->id }}">
-                        <button class="admin-btn btn-2">Delete</button>
+                        <button class="admin-btn btn-delete">Delete</button>
                     </form>
                 </td>
             </tr>

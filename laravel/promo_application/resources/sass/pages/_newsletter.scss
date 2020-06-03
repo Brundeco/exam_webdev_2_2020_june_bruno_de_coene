@@ -1,0 +1,20 @@
+.subscribe-message h2 {
+    border-bottom: 1px solid $base-black;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+}
+
+.subscribe-succes span {
+    @include main-paragraph;
+    display: inline-block !important;
+    margin-bottom: 10px;
+}
+
+.subscribe-succes span {
+    @include paragraph-intro;
+    margin-bottom: 10px;
+}
+
+.subscribe-message a {
+    margin-top: 50px;
+}

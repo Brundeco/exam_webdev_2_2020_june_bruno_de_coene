@@ -24,6 +24,23 @@
 
 <body>
     <div id="app">
+        @if (Auth::user())
+        <div class="user-active">
+            <p class="right-margin-md">Admin dashboard</p>
+            <a class="admin-btn btn-1" href="{{ route('home') }}">Website
+            </a>
+            <div class="dropdown-menu dropdown-menu-right admin-btn btn-3" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                 document.getElementById('logout-form').submit();">
+                    {{ __('Logout') }}
+                </a>
+
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
+            </div>
+        </div>
+        @endif
 
         <main>
             @yield('content')

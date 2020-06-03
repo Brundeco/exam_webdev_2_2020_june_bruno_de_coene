@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,10 +15,16 @@ use Auth;
 
 Route::get('/', 'PageController@getHomeContent')->name('home');
 Route::get('/about', 'PageController@getAboutContent')->name('about');
-Route::get('/blog', 'PostsController@getIndex')->name('blog');
-Route::post('/blog/donate', 'PostsController@postDonate')->name('blog_donate');
-Route::get('/blog/{id}/show', 'PostsController@getShow')->name('blog.show');
 Route::get('/contact', 'PageController@getContactContent')->name('contact');
+
+Route::get('/blog', 'PostsController@getIndex')->name('blog');
+Route::post('/blog/donate', 'PostsController@postDonate')->name('blog.donate');
+Route::get('/blog/{id}/show', 'PostsController@getShow')->name('blog.show');
+
+Route::post('/subscribe', 'NewsletterController@postSubscribe')->name('subscribe');
+// Route::get('/subscribe/succes', 'NewsletterController@getSubscribeSucces')->name('subscribe.succes');
+// Route::get('/subscribe/fail', 'NewsletterController@getSubscribeFail')->name('subscribe.fail');
+
 
 Auth::routes(['verify' => true]);
 
@@ -37,7 +42,7 @@ Route::group(['middleware' => ['verified']], function () {
     Route::post('/blog/edit/{id}', 'DashboardController@postEditBlog')->name('blog.edit.post');
     Route::post('/blog/delete/{id}', 'DashboardController@postDeleteBlog')->name('blog.delete');
     Route::get('/blog/create', 'DashboardController@postCreateBlog')->name('blog.create');
-    Route::get('/blog/save', 'DashboardController@postSaveBlog')->name('blog.save');
+    Route::post('/blog/store', 'DashboardController@postStoreBlog')->name('blog.store');
 
     Route::get('/about/edit', 'PageController@about')->name('about');
     Route::get('/blog/edit', 'PostsController@getEdit')->name('blog_edit');
