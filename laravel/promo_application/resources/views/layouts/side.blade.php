@@ -16,9 +16,6 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-    {{-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> --}}
-
-    <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 
@@ -26,18 +23,19 @@
     <div id="app">
         @if (Auth::user())
         <div class="user-active">
-            <p class="right-margin-md">Admin dashboard</p>
-            <a class="admin-btn btn-1" href="{{ route('home') }}">Website
-            </a>
-            <div class="dropdown-menu dropdown-menu-right admin-btn btn-3" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                 document.getElementById('logout-form').submit();">
-                    {{ __('Logout') }}
+            <h2 class="main-section-title">Admin dashboard</h2>
+            <div class="flex-row">
+                <a class="admin-btn btn-1" href="{{ route('home') }}">Website
                 </a>
-
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                    @csrf
-                </form>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item admin-btn btn-3" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                     document.getElementById('logout-form').submit();">
+                        {{ __('Logout') }}
+                    </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
+                </div>
             </div>
         </div>
         @endif

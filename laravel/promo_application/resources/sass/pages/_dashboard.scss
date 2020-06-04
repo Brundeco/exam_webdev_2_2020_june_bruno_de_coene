@@ -1,13 +1,13 @@
 .user-active {
-    padding: 20px;
+    padding: 0 7%;
     width: 100%;
     height: auto;
     position: fixed;
     z-index: 100;
-    background-color: rgba($color: $soft-grey, $alpha: 0.9);
+    background-color: rgba($color: $soft-grey, $alpha: 1);
     text-align: center;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     font-weight: 500;
     font-style: italic;
@@ -22,22 +22,50 @@
     padding-right: 50px;
 }
 
-.table {
-    margin-top: 50px;
-}
-
 .table-wrapper {
-    padding: 3rem 20%;
-    margin-top: 70px;
+    padding: 3rem 5%;
+    margin-top: 100px;
 }
 
-td,
-th {
-    text-align: left;
+.flex-row {
+    display: flex;
+    justify-content: flex-start;
+    align-self: center;
+    margin: 20px 0px;
+    padding: 2%;
+    border-radius: 10px;
 }
 
-tr {
-    padding-right: 50px;
+.flex-row-homepage {
+    display: flex;
+    justify-content: flex-start;
+    align-self: center;
+    margin: 20px 0px;
+    padding: 1%;
+    border-radius: 10px;
+}
+
+.flex-row-color-1 {
+    background-color: $soft-grey;
+}
+
+.flex-row-head {
+    background-color: $soft-green;
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    justify-content: center;
+}
+
+.flex-col-small {
+    width: 6%;
+}
+
+.flex-col-md {
+    width: 65%;
 }
 
 input {
@@ -50,17 +78,13 @@ textarea {
     width: 100%;
 }
 
-.flex-cell {
-    display: flex;
-    justify-content: flex-start;
+.clear {
+    margin: 0;
+    // padding: 0;
 }
 
 .button-wrapper {
     display: flex;
-}
-
-.admin-form {
-    padding: 0 20%;
 }
 
 .admin-form h2 {

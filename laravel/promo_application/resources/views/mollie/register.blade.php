@@ -17,12 +17,17 @@
 
                         <div class="form-group row">
                             <label for="password">First name</label>
-                            <input type="email" placeholder="First name" class="form-control" name="first_name">
+                            <input type="text" placeholder="First name" class="form-control" name="firstname">
                         </div>
 
                         <div class="form-group row">
                             <label for="password">Last name</label>
-                            <input type="email" placeholder="Last name" class="form-control" name="last_name">
+                            <input type="text" placeholder="Last name" class="form-control" name="lastname">
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="password">Amount</label>
+                            <input type="text" placeholder="Amount" class="form-control" name="amount">
                         </div>
 
                         <div class="form-group row mb-0">

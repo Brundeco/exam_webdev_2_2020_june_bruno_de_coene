@@ -27,26 +27,23 @@
         <div class="mollie-payment">
             <a href="{{ route('mollie.register') }}" class="admin-btn btn-save">Donate</a>
         </div>
-
-        @if (\Request::is('home/*'))
-        <h2>home</h2>
-        @endif
-
+        
         <header>
             @if (Auth::user())
             <div class="user-active">
-                <p class="right-margin-md">Welcome {{ Auth::user()->name }}. You can start editting</p>
-                <a class="admin-btn btn-1" href="{{ route('page.index') }}">Dashboard
-                </a>
-                <div class="dropdown-menu dropdown-menu-right admin-btn btn-3" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                     document.getElementById('logout-form').submit();">
-                        {{ __('Logout') }}
+                <h2 class="right-margin-md">Welcome {{ Auth::user()->name }}. You can start editting</h2>
+                <div class="flex-row-homepage">
+                    <a class="admin-btn btn-1" href="{{ route('page.index') }}">Dashboard
                     </a>
-
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                        @csrf
-                    </form>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item admin-btn btn-3" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                         document.getElementById('logout-form').submit();">
+                            {{ __('Logout') }}
+                        </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+                    </div>
                 </div>
             </div>
             @endif
@@ -55,7 +52,7 @@
                 <img src="{{ $data->image }}" alt="">
                 <div class="header-img-overlay"></div>
                 <div class="header-content">
-                    <div class="header-top" style="<?php if(Auth::user()) { echo 'margin-top: 80px;'; } ?>">
+                    <div class="header-top" style="<?php if(Auth::user()) { echo 'margin-top: 15vh;'; } ?>">
                         <nav>
                             <ul>
                                 <li><a href="/">Home</a></li>
