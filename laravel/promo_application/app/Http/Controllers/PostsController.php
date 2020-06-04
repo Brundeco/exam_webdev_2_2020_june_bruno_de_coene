@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use \App\Post;
+use \App\Page;
 
 use Illuminate\Http\Request;
 
@@ -10,9 +11,11 @@ class PostsController extends Controller
 {
     public function getIndex() {
 
-        $posts = Post::get();        
+        $posts = Post::get();
+        $data = Page::get()->where('page_title', 'blog')->first();    
         return view('pages.blog', [
-            'data' => $posts
+            'posts' => $posts,
+            'data' => $data
         ]);
     }
 

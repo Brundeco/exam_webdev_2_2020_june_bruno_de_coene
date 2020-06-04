@@ -1,0 +1,17 @@
+.mollie-payment {
+    display: flex;
+    height: 100px;
+    width: 200px;
+    position: fixed;
+    bottom: 5vh;
+    right: 3vw;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.mollie-payment-btn {
+   width: 100%;
+   height: 100%;
+   @include main-cta-dark;
+}

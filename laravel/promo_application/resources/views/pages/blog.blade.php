@@ -2,7 +2,7 @@
 
 @section('content')
 
-@foreach ($data as $item)
+@foreach ($posts as $item)
 <div class="blogpost-wrapper">
     <div class="blogpost-left">
         <div class="blogpost-color-bg"></div>

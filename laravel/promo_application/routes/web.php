@@ -22,9 +22,11 @@ Route::post('/blog/donate', 'PostsController@postDonate')->name('blog.donate');
 Route::get('/blog/{id}/show', 'PostsController@getShow')->name('blog.show');
 
 Route::post('/subscribe', 'NewsletterController@postSubscribe')->name('subscribe');
-// Route::get('/subscribe/succes', 'NewsletterController@getSubscribeSucces')->name('subscribe.succes');
-// Route::get('/subscribe/fail', 'NewsletterController@getSubscribeFail')->name('subscribe.fail');
 
+Route::get('/donate','MollieController@registerPayment')->name('mollie.register');
+Route::post('/donate/post','MollieController@postRegisterPayment')->name('mollie.register.post');
+Route::post('/mollie-payment','MollieController@preparePayment')->name('mollie.payment');
+Route::get('/payment-success','MollieController@paymentSuccess')->name('payment.success');
 
 Auth::routes(['verify' => true]);
 

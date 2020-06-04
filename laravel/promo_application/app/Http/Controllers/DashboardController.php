@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+// use Illuminate\Support\Facades\Input;
 use App\Page;
 use App\Post;
 
@@ -25,16 +26,27 @@ class DashboardController extends Controller
 
     public function postEditPage(Page $page, Request $r) {
 
+        // dd($r);
+
         if($r->id != $page->id) abort('403', 'Wrong page');
         
+        $page->page_intro = $r->page_intro;
         $page->section_title = $r->section_title;
-        $page->section_intro = $r->section_intro;
         $page->content = $r->page_content;
         $page->button_text = $r->button_text;
+
+        $page->image = request()->image->store('uploads', 'public');
+        $page->image = '/storage/'.$page->image;
+
+        if($r->hasFile('image')) {
+            $file = request()->image->store('uploads', 'public');
+            $page->image = '/storage/'.$file;
+        }
 
         $page->save();
 
         return redirect()->route('page.index');
+       
     }
 
     public function getIndexBlog() {
@@ -110,4 +122,3 @@ class DashboardController extends Controller
     }
 
 }
-

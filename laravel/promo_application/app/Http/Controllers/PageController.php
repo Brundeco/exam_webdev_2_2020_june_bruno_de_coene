@@ -35,7 +35,7 @@ class PageController extends Controller
 
         // dd($data);
 
-         return view('pages.about', [
+         return view('pages.contact', [
             'data' => $data
         ]);
     }
