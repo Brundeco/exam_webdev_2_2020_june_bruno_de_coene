@@ -11,7 +11,7 @@ $factory->define(Post::class, function (Faker $faker) {
         'title' => $faker->title,
         'intro' => $faker->text($maxNbChars = 50),
         'body' => $faker->text($maxNbChars = 400),
-        'image' => $faker->imageUrl($width = 640, $height = 480),
+        'image' => $faker->imageUrl($width = 50, $height = 50),
         'alt' => $faker->text($maxNbChars = 15)
     ];
 });

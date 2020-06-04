@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
-// use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\File;
 use App\Page;
 use App\Post;
 
@@ -26,8 +26,6 @@ class DashboardController extends Controller
 
     public function postEditPage(Page $page, Request $r) {
 
-        // dd($r);
-
         if($r->id != $page->id) abort('403', 'Wrong page');
         
         $page->page_intro = $r->page_intro;
@@ -46,14 +44,11 @@ class DashboardController extends Controller
         $page->save();
 
         return redirect()->route('page.index');
-       
     }
 
     public function getIndexBlog() {
 
         $posts = Post::all();
-
-        // dd($posts);
         
         return view('dashboard.blog.index', [
             'posts' => $posts
@@ -71,14 +66,19 @@ class DashboardController extends Controller
 
     public function postEditBlog(Request $r, $id) {
 
-        // dd($r);
-
         $post = Post::find($id);
+        $image_path = Post::find($id)->image;
 
         $post->title = $r->post_title;
         $post->intro = $r->post_intro;
         $post->body = $r->post_body;
         $post->slug = $r->post_title;
+
+        if($r->hasFile('image')) {
+            File::delete(public_path($image_path));
+            $file = request()->image->store('uploads', 'public');
+            $post->image = '/storage/'.$file;
+        }
 
         $post->save();
 
@@ -86,8 +86,6 @@ class DashboardController extends Controller
     }
 
     public function postDeleteBlog($id) {
-
-        // dd($r);
 
         $post = Post::find($id);
         $post-> delete();
@@ -102,8 +100,6 @@ class DashboardController extends Controller
 
     public function postStoreBlog(Request $r) {
 
-        // dd($r);
-
         $post = new Post();
         
         $post->title = request('post_title');
@@ -113,8 +109,6 @@ class DashboardController extends Controller
         $post->alt = request('alt');
         $post->image = request()->image->store('uploads', 'public');
         $post->image = '/storage/'.$post->image;
-
-        // dd($post);
 
         $post->save();
 

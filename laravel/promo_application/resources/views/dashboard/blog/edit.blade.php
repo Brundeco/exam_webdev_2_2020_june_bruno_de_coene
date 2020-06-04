@@ -3,8 +3,8 @@
 @section('content')
 <div class="table-wrapper">
 
-    <form class=" border border-light p-5 admin-form"
-        action="{{ route('blog.edit', $post->id) }}" method="post">
+    <form class=" border border-light p-5 admin-form" action="{{ route('blog.edit', $post->id) }}" method="post"
+        enctype="multipart/form-data">
         @csrf
         <input type="hidden" value="{{ $post->id }}" name="id">
 
@@ -26,6 +26,13 @@
             <h3>Post content</h3>
             <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3"
                 name="post_body">{{ $post->body }}</textarea>
+        </div>
+
+        <div class="form-group">
+            <h3>Post image</h3>
+            <input type="file" name="image">
+            <input type="text" id="defaultContactFormName" class="form-control mb-4" value="" name="alt"
+                placeholder="Short image alt text">
         </div>
 
         <div class="button-wrapper">
