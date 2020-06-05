@@ -23,25 +23,11 @@ Route::get('/blog/{id}/show', 'PostsController@getShow')->name('blog.show');
 
 Route::post('/subscribe', 'NewsletterController@postSubscribe')->name('subscribe');
 
-
-
-
-
-
 Route::get('/donate','MollieController@registerPayment')->name('mollie.register');
 Route::post('/mollie-payment','MollieController@preparePayment')->name('mollie.payment');
 
 Route::name('webhooks.mollie')->post('/webhooks/mollie', 'MollieController@postRegisterPayment');
 Route::get('/payment-success','MollieController@paymentSuccess')->name('payment.success');
-
-
-
-
-
-
-
-
-
 
 Auth::routes(['verify' => true]);
 
@@ -55,14 +41,14 @@ Route::group(['middleware' => ['verified']], function () {
     Route::post('/pages/delete/{page}', 'DashboardController@getDeletePage')->name('pages.delete');
 
     Route::get('/blog/index', 'DashboardController@getIndexBlog')->name('blog.index');
-    Route::get('/blog/edit/{id}', 'DashboardController@getEditBlog')->name('blog.edit');
+    Route::get('/blog/edit/{id}', 'DashboardController@getEditBlog')->name('blog.edit.get');
     Route::post('/blog/edit/{id}', 'DashboardController@postEditBlog')->name('blog.edit.post');
     Route::post('/blog/delete/{id}', 'DashboardController@postDeleteBlog')->name('blog.delete');
     Route::get('/blog/create', 'DashboardController@postCreateBlog')->name('blog.create');
     Route::post('/blog/store', 'DashboardController@postStoreBlog')->name('blog.store');
 
-    Route::get('/about/edit', 'PageController@about')->name('about');
-    Route::get('/blog/edit', 'PostsController@getEdit')->name('blog_edit');
+    // Route::get('/about/edit', 'PageController@about')->name('about_edit');
+    // Route::get('/blog/edit', 'PostsController@getEdit')->name('blog.edit');
 } );
 
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');

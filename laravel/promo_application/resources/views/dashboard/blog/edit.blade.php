@@ -3,7 +3,7 @@
 @section('content')
 <div class="table-wrapper">
 
-    <form class=" border border-light p-5 admin-form" action="{{ route('blog.edit', $post->id) }}" method="post"
+    <form class=" border border-light p-5 admin-form" action="{{ route('blog.edit.post', $post->id) }}" method="post"
         enctype="multipart/form-data">
         @csrf
         <input type="hidden" value="{{ $post->id }}" name="id">

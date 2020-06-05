@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="table-wrapper">
-    <div class="flex-row clear-margin">
+    <div class="flex-row clear-margin clear-padding">
         <a class="admin-btn btn-2" href="{{ route('page.index') }}" class="btn">Back to pages</a>
     </div>
     <div class="flex-row flex-row-head">
@@ -23,7 +23,7 @@
         <div class="flex-col">{{ ucfirst($item->title) }}</div>
         <div class="flex-col">
             <div class="flex-row">
-                <a class="admin-btn btn-1" href="{{ route('blog.edit', $item->id) }}" class="btn">Edit</a>
+                <a class="admin-btn btn-1" href="{{ route('blog.edit.get', $item->id) }}" class="btn">Edit</a>
                 <form action="{{ route('blog.delete', $item->id) }}" method="post">
                     @csrf
                     <input type="hidden" value="{{ $item->id }}">

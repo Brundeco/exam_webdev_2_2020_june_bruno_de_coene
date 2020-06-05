@@ -14,6 +14,8 @@ class MollieController extends Controller
 
     public function registerPayment(Request $r) {
 
+        // dd($r);
+
        return view('mollie.register',[
            'data' => $r
        ]);

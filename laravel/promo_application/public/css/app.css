@@ -2327,15 +2327,15 @@ textarea {
 .admin-form h2 {
   margin-bottom: 50px;
   font-size: 1.2em;
-  font-weight: 300;
+  font-weight: 400;
   font-style: italic;
   padding: 20px;
-  background-color: #000;
+  background-color: rgba(173, 194, 80, 0.5);
   width: 30%;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
+  color: #000;
   border-radius: 10px;
 }
 

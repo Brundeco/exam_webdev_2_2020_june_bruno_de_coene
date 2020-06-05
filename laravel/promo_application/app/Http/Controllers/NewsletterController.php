@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
 
 use Newsletter;
@@ -10,17 +11,20 @@ class NewsletterController extends Controller
 {
     public function postSubscribe(Request $r) {
 
-        if(! Newsletter::isSubscribed($r->email)) {
+    $email = $r->email;
 
-            Newsletter::subscribePending($r->email);
+    Newsletter::subscribe($email);
 
+    $status = Newsletter::lastActionSucceeded();
+
+        if($status) {
             return view('newsletter.succes', [
                 'data' => $r->email
             ]);
+        } else {
+            return view('newsletter.fail', [
+                'data' => $r->email
+            ]);
         }
-        return view('newsletter.fail', [
-            'data' => $r->email
-        ]);
-
     }
 }
