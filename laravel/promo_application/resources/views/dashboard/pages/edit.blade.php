@@ -8,7 +8,7 @@
         @csrf
         <input type="hidden" value="{{ $page->id }}" name="id">
 
-        <div>
+        <div class="flex-row clear-padding">
             <h2 class="main-section-title">Edit {{ $page->page_title }} page </h2>
         </div>
 

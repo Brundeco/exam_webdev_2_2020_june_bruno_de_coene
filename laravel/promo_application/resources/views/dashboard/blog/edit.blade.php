@@ -8,7 +8,7 @@
         @csrf
         <input type="hidden" value="{{ $post->id }}" name="id">
 
-        <div>
+        <div class="flex-row clear-padding">
             <h2 class="h4 mb-4">Edit {{ $post->title }} </h2>
         </div>
         <div class="flex-col-md">

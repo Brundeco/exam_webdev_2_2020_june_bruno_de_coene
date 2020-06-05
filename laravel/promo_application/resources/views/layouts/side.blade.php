@@ -24,9 +24,19 @@
         @if (Auth::user())
         <div class="user-active">
             <h2 class="main-section-title">Admin dashboard</h2>
-            <div class="flex-row">
+            <div class="flex-row-homepage">
+                @php
+                $myString = url()->current();
+                @endphp
+
+                @if ((strpos($myString, 'blog') && (strpos($myString, 'show')) !== false))
+                <a class="admin-btn btn-1" href="{{ route('page.index') }}">Dashboard
+                </a>
+                @else
                 <a class="admin-btn btn-1" href="{{ route('home') }}">Website
                 </a>
+                @endif
+
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item admin-btn btn-3" href="{{ route('logout') }}" onclick="event.preventDefault();
                                      document.getElementById('logout-form').submit();">

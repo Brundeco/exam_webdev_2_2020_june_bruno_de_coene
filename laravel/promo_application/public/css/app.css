@@ -2312,8 +2312,12 @@ textarea {
   width: 100%;
 }
 
-.clear {
+.clear-margin {
   margin: 0;
+}
+
+.clear-padding {
+  padding: 0;
 }
 
 .button-wrapper {
@@ -2321,12 +2325,18 @@ textarea {
 }
 
 .admin-form h2 {
-  display: block;
-  margin-bottom: 70px;
-  font-size: 1.7em;
-  font-weight: 400;
-  border-bottom: 1px solid lightgrey;
-  padding-bottom: 20px;
+  margin-bottom: 50px;
+  font-size: 1.2em;
+  font-weight: 300;
+  font-style: italic;
+  padding: 20px;
+  background-color: #000;
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  border-radius: 10px;
 }
 
 .admin-form h3 {

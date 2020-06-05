@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="table-wrapper">
-    <div class="flex-row clear">
+    <div class="flex-row clear-margin">
         <a class="admin-btn btn-2" href="{{ route('page.index') }}" class="btn">Back to pages</a>
     </div>
     <div class="flex-row flex-row-head">

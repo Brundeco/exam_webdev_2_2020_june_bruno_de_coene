@@ -27,7 +27,7 @@
         <div class="mollie-payment">
             <a href="{{ route('mollie.register') }}" class="admin-btn btn-save">Donate</a>
         </div>
-        
+
         <header>
             @if (Auth::user())
             <div class="user-active">
