@@ -33,9 +33,9 @@
                   <tr>
                     <th>
                       <h1 class="main-section-title"> Sleep Orbit mail </h1>
-                      <p class="mail-intro">Hello <span>{{ $data->firstname . ' ' . $data->lastname  }}</span> we received the following mail from you.</p>
-                      <p class="mail-content"> Subect: {{ $data->subject }} </p>
-                      <p class="mail-content clear-margin"> Content: {{ $data->content }} </p>
+                      <p class="mail-intro">Hello {{ $data->firstname . ' ' . $data->lastname  }} we received the following mail from you.</p>
+                      <p class="mail-subject"><span> {{ $data->subject }} </span></p>
+                      <p class="mail-content clear-margin"> {{ $data->content }} </p>
                       <p class="mail-outro">Thanks for reaching out to us. We will try to get back at you as soon as possible! </p>
                     </th>
                     <th class="expander"></th>

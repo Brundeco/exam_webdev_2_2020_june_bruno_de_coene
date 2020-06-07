@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use \App\Page;
-use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
@@ -36,10 +35,9 @@ class PageController extends Controller
         ]);
     }
 
-    public function submitContactForm(Request $r, Exception $e) {
+    public function submitContactForm(Request $r) {
 
-        try {
-            $data = [
+        $data = [
                 'firstname' => $r->firstname,
                 'lastname' => $r->lastname,
                 'email' => $r->email,
@@ -58,15 +56,7 @@ class PageController extends Controller
                 $message->subject($r->subject);
             });
 
-            return redirect()->route('mail.confirm', [
-                'user' => $r->firstname
-            ]);
-
-        } catch (Exception $e) {
-            dd($e);
-        }
-
-       
+            return redirect()->route('mail.confirm');
     }
 
     public function confirmContactForm() {

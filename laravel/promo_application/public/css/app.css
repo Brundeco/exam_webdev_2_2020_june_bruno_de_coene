@@ -2470,6 +2470,7 @@ textarea {
   justify-content: center;
   align-items: center;
   height: 100%;
+  padding: 10%;
 }
 
 .mail-content,
@@ -2481,18 +2482,37 @@ textarea {
   font-weight: 400;
 }
 
-.mail-intro span {
-  font-weight: 400;
-  font-style: italic;
-}
-
 .mail-outro {
   margin-top: 30px;
-  font-weight: 700;
+  font-weight: 500;
+  text-align: left;
+  padding: 2%;
+  padding-left: 0;
+}
+
+.mail-content,
+.mail-subject {
+  font-weight: 200;
+  text-align: left;
+  margin-top: 30px !important;
+  display: block;
 }
 
 .mail-content {
-  margin-top: 20px;
-  font-weight: 200;
+  background: #dadada;
+  border-radius: 10px;
+  padding: 3%;
+}
+
+.mail-subject {
+  font-weight: 600;
+  font-size: 1em;
+  background: rgba(173, 194, 80, 0.5);
+  border-radius: 10px;
+  padding: 1.5% 3%;
+}
+
+.mail-subject span {
+  font-weight: 600;
 }
 
