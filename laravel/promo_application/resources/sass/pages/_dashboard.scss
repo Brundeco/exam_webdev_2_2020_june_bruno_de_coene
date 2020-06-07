@@ -79,11 +79,11 @@ textarea {
 }
 
 .clear-margin {
-    margin: 0;;
+    margin: 0 !important;
 }
 
 .clear-padding {
-    padding: 0;
+    padding: 0 !important;
 }
 
 .button-wrapper {
@@ -106,8 +106,12 @@ textarea {
 }
 
 .admin-form h3 {
-    float: left;
     margin-bottom: 10px;
     font-size: 1.2em;
     font-weight: 400;
+}
+
+.image-upload {
+    padding: 0;
+    margin: 15px 0;
 }

@@ -43,7 +43,9 @@
 
             <div class="form-group">
                 <h3>Page header image</h3>
-                <input type="file" name="image">
+                <div>
+                    <input type="file" name="image" class="image-upload">
+                </div>
                 <input type="text" id="defaultContactFormName" class="form-control mb-4" value="" name="alt"
                     placeholder="Short image alt text">
             </div>

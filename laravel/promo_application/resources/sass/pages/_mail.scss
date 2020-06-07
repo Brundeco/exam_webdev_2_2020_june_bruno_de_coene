@@ -1,0 +1,63 @@
+.mail-wrapper {
+    height: 100vh;
+    width: 100%;
+    background: $soft-grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.mail-wrapper h1 {
+    @include main-section-title;
+    text-align: left;
+    border-bottom: 1px solid black;
+    margin-bottom: 30px;
+}
+
+.mail-wrapper h2 {
+    font-weight: 400;
+    font-size: 1.3em;
+    color: $dark-grey;
+    text-align: left;
+    margin-top: 30px;
+}
+
+.mail-container {
+    width: 80%;
+    height: 65%;
+    background-color: rgba(250,250,250, 0.9);
+    border-radius: 20px;
+}
+
+.center-mail-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.mail-content,
+.mail-intro {
+    text-align: left;
+}
+
+.mail-intro {
+    font-weight: 400;
+}
+
+.mail-intro span {
+    font-weight: 400;
+    font-style: italic;
+}
+
+.mail-outro {
+    margin-top: 30px;
+    font-weight: 700;
+}
+
+.mail-content {
+    margin-top: 20px;
+    font-weight: 200;
+}

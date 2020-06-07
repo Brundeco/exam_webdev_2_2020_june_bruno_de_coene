@@ -33,10 +33,10 @@ class DashboardController extends Controller
         $page->content = $r->page_content;
         $page->button_text = $r->button_text;
 
-        $page->image = request()->image->store('uploads', 'public');
-        $page->image = '/storage/'.$page->image;
-
         if($r->hasFile('image')) {
+            $page->image = request()->image->store('uploads', 'public');
+            $page->image = '/storage/'.$page->image;
+
             $file = request()->image->store('uploads', 'public');
             $page->image = '/storage/'.$file;
         }

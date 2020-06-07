@@ -5,13 +5,14 @@
 <div class="table-wrapper">
     <div class="flex-row clear-margin clear-padding">
         <a class="admin-btn btn-2" href="{{ route('page.index') }}" class="btn">Back to pages</a>
+        <a class="admin-btn btn-2" href="{{ route('blog.create') }}" class="btn">Create new post</a>
     </div>
     <div class="flex-row flex-row-head">
         <div class="flex-col flex-col-small">
             <h3>#</h3>
         </div>
         <div class="flex-col">
-            <h3>Page title</h3>
+            <h3>Post title</h3>
         </div>
         <div class="flex-col">
             <h3>Actions</h3>

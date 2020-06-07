@@ -30,7 +30,7 @@
 
             <div class="form-group">
                 <h3>Post image</h3>
-                <input type="file" name="image">
+                <input type="file" name="image" class="image-upload">
                 <input type="text" id="defaultContactFormName" class="form-control mb-4" value="" name="alt"
                     placeholder="Short image alt text">
             </div>
