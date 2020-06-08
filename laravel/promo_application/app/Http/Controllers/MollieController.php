@@ -14,8 +14,6 @@ class MollieController extends Controller
 
     public function registerPayment(Request $r) {
 
-        // dd($r);
-
        return view('mollie.register',[
            'data' => $r
        ]);
@@ -30,15 +28,16 @@ class MollieController extends Controller
     public function preparePayment(Request $r)
     {   
         
+        // dd($r->public);
 
         $payment = Mollie::api()->payments()->create([
         'amount' => [
             'currency' => 'EUR', // Type of currency you want to send
-            'value' => '10.00', // You must send the correct number of decimals, thus we enforce the use of strings
+            'value' => bcdiv($r->amount, 1, 2), // You must send the correct number of decimals, thus we enforce the use of strings
         ],
         'description' => 'Payment By codehunger', 
         'redirectUrl' => route('payment.success'), // after the payment completion where you to redirect
-        'webhookUrl' => 'http://5631c63f8541.ngrok.io/webhooks/mollie'
+        'webhookUrl' => 'https://2c6b55655031.ngrok.io/webhooks/mollie'
         ]);
 
         $deposit = New Payment();
@@ -46,9 +45,11 @@ class MollieController extends Controller
         $deposit->email = $r->email;
         $deposit->firstname = $r->firstname;
         $deposit->lastname = $r->lastname;
+        $deposit->message = $r->message;
         $deposit->amount = $r->amount;
         $deposit->status = false;
         $deposit->payment_id = $payment->id;
+        $r->public != null ? $deposit->public = true : $deposit->public = false;
 
         $deposit->save();
     

@@ -19,18 +19,18 @@
         <div class="flex-col flex-col-small">{{ $item->id }}</div>
         <div class="flex-col">{{ ucfirst($item->page_title) }}</div>
         <div class="flex-col">
-            @if ($item->page_title === 'blog')
+            {{-- @if ($item->page_title === 'blog')
             <div class="flex-row clear-padding">
                 <a class="admin-btn btn-1" href="{{ route('blog.index') }}" class="btn">Edit</a>
                 <a class="admin-btn btn-3" href="{{ route($item->page_title) }}" class="btn">View</a>
             </div>
 
-            @else
+            @else --}}
             <div class="flex-row clear-padding">
                 <a class="admin-btn btn-1" href="{{ route('pages.edit', $item->id) }}" class="btn">Edit</a>
                 <a class="admin-btn btn-3" href="{{ route(  $item->page_title) }}" class="btn">View</a>
             </div>
-            @endif
+            {{-- @endif --}}
         </div>
     </div>
     @endforeach

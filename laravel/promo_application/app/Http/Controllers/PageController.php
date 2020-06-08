@@ -3,35 +3,57 @@
 namespace App\Http\Controllers;
 
 use \App\Page;
+use \App\Post;
+use \App\Payment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\DB;
 
 class PageController extends Controller
 {
     public function getHomeContent() {
         
         $data = Page::get()->where('page_title', 'home')->first();
+        $donations = Payment::get()->where('public', 1);
 
          return view('pages.home', [
-            'data' => $data
+            'data' => $data,
+            'donations' => $donations
         ]);
     }
 
     public function getAboutContent() {
         
         $data = Page::get()->where('page_title', 'about')->first();
+        $donations = Payment::get()->where('public', 1);
 
          return view('pages.about', [
-            'data' => $data
+            'data' => $data,
+            'donations' => $donations
         ]);
     }
 
     public function getContactContent() {
         
         $data = Page::get()->where('page_title', 'contact')->first();
+        $donations = Payment::get()->where('public', 1);
 
          return view('pages.contact', [
-            'data' => $data
+            'data' => $data,
+            'donations' => $donations
+        ]);
+    }
+
+    public function getBlogContent() {
+        
+        $posts = Post::get();
+        $data = Page::get()->where('page_title', 'blog')->first();
+        $donations = Payment::get()->where('public', 1);
+  
+        return view('pages.blog', [
+            'posts' => $posts,
+            'data' => $data,
+            'donations' => $donations
         ]);
     }
 
@@ -44,10 +66,6 @@ class PageController extends Controller
                 'subject' => $r->subject,
                 'content' => $r->content
             ];
-    
-            // return view('mail.contact', [
-            //     'data' => (object)$data
-            // ]);
     
             Mail::send('mail.contact', ['data' => (object)$data ] , function ($message) use($r) {
                 $message->sender('brundeco@student.arteveldehs.be', 'Bruno De Coene');

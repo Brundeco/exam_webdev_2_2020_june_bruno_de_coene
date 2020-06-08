@@ -32,14 +32,16 @@ class DashboardController extends Controller
         $page->section_title = $r->section_title;
         $page->content = $r->page_content;
         $page->button_text = $r->button_text;
+        $page->image = $r->image->store('uploads', 'public');
+        $page->image = '/storage/'.$page->image;
 
-        if($r->hasFile('image')) {
-            $page->image = request()->image->store('uploads', 'public');
-            $page->image = '/storage/'.$page->image;
-
-            $file = request()->image->store('uploads', 'public');
-            $page->image = '/storage/'.$file;
-        }
+        // if($r->hasFile('image')) {
+            // dd($r->image);
+            // $page->image = $r->image->store('uploads', 'public');
+            // $page->image = '/storage/'.$page->image;
+            // $file = request()->image->store('uploads', 'public');
+            // $page->image = '/storage/'.$file;
+        // }
 
         $page->save();
 
@@ -67,18 +69,24 @@ class DashboardController extends Controller
     public function postEditBlog(Request $r, $id) {
 
         $post = Post::find($id);
-        $image_path = Post::find($id)->image;
+        $image_path = $post->image;
+
+
+        // dd($r->image);
 
         $post->title = $r->post_title;
         $post->intro = $r->post_intro;
         $post->body = $r->post_body;
         $post->slug = $r->post_title;
+        $post->image = $r->image->store('uploads', 'public');
+        $post->image = '/storage/'.$post->image;
 
-        if($r->hasFile('image')) {
-            File::delete(public_path($image_path));
-            $file = request()->image->store('uploads', 'public');
-            $post->image = '/storage/'.$file;
-        }
+
+        // if($r->hasFile('image')) {
+        //     File::delete(public_path($image_path));
+        //     $file = request()->image->store('uploads', 'public');
+        //     $post->image = '/storage/'.$file;
+        // }
 
         $post->save();
 

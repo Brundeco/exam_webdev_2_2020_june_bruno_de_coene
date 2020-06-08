@@ -25,27 +25,69 @@
     <div id="app">
 
         <div class="mollie-payment">
-            <a href="{{ route('mollie.register') }}" class="admin-btn btn-save">Donate</a>
+            <a href="{{ route('mollie.register') }}"
+                class="admin-btn btn-save mollie-payment-btn">Donate</a>
+            <button class="admin-btn admin-btn-3" id="toggleDonations">Donation list</button>
+        </div>
+
+        <div class="donation-wrapper">
+            <div id="closeDonations">
+                <button>CLOSE</button>
+            </div>
+            <div class="table-wrapper">
+                <div class="flex-row flex-row-head-donation">
+                    <div class="flex-col flex-col-med">
+                        <h3>Donation by</h3>
+                    </div>
+                    <div class="flex-col">
+                        <h3>Message</h3>
+                    </div>
+                    <div class="flex-col">
+                        <h3>Amount</h3>
+                    </div>
+                </div>
+                @foreach($donations as $item)
+                    <div class="flex-row flex-row-donation">
+                        <div class="flex-col flex-col-med">
+                            <p>
+                                {{ $item->firstname . ' ' .  $item->lastname }}
+                            </p>
+                        </div>
+                        <div class="flex-col">
+                            <p>
+                                {{ ucfirst($item->message) }}
+                            </p>
+                        </div>
+                        <div class="flex-col">
+                            <p>
+                               € {{ bcdiv($item->amount, 1, 2) }}
+                            </p>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
         </div>
 
         <header>
-            @if (Auth::user())
-            <div class="user-active">
-                <h2 class="right-margin-md">Welcome {{ Auth::user()->name }}. You can start editting</h2>
-                <div class="flex-row-homepage">
-                    <a class="admin-btn btn-1" href="{{ route('page.index') }}">Dashboard
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item admin-btn btn-3" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                         document.getElementById('logout-form').submit();">
-                            {{ __('Logout') }}
+            @if(Auth::user())
+                <div class="user-active">
+                    <h2 class="right-margin-md">Welcome {{ Auth::user()->name }}. You can start editting</h2>
+                    <div class="flex-row-homepage">
+                        <a class="admin-btn btn-1" href="{{ route('page.index') }}">Dashboard
                         </a>
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                            @csrf
-                        </form>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item admin-btn btn-3" href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                                         document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}
+                            </a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                style="display: none;">
+                                @csrf
+                            </form>
+                        </div>
                     </div>
                 </div>
-            </div>
             @endif
 
             <div class="header-hero-image">
@@ -61,9 +103,10 @@
                                 <li><a href="/contact">Contact</a></li>
                                 <!-- Authentication Links -->
                                 @guest
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                                </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link"
+                                            href="{{ route('login') }}">{{ __('Login') }}</a>
+                                    </li>
                                 @else
                                 @endguest
                             </ul>

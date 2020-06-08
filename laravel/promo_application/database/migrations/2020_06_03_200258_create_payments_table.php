@@ -20,7 +20,9 @@ class CreatePaymentsTable extends Migration
             $table->string('email');
             $table->string('firstname');
             $table->string('lastname');
+            $table->text('message');
             $table->float('amount');
+            $table->boolean('public');
             $table->boolean('status');
         });
     }

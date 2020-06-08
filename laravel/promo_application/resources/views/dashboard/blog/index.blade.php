@@ -30,6 +30,7 @@
                     <input type="hidden" value="{{ $item->id }}">
                     <button class="admin-btn btn-delete">Delete</button>
                 </form>
+                <a class="admin-btn btn-3 margin-left-sm" href="{{ route('blog.show', $item->id) }}" class="btn">View</a>
             </div>
         </div>
     </div>

@@ -11,7 +11,25 @@
         <div class="flex-row clear-padding">
             <h2 class="main-section-title">Edit {{ $page->page_title }} page </h2>
         </div>
+
         <div class="flex-col-md">
+            
+            @if ($page->page_title === 'blog')
+            <div class="flex-row clear-padding main-section-title">
+                <a class="admin-btn btn-3" href="{{ route('blog.index') }}" class="btn">Go to blog overview</a>
+            </div>
+            <input type="hidden" name="page_intro" value="default">
+            <input type="hidden" name="page_content" value="default">
+            <input type="hidden" name="section_title" value="default">
+            <input type="hidden" name="button_text" value="default">
+            @endif
+
+            @if ($page->page_title === 'contact')
+            <input type="hidden" name="page_intro" value="default">
+            <input type="hidden" name="page_content" value="default">
+            <input type="hidden" name="section_title" value="default">
+            <input type="hidden" name="button_text" value="default">
+            @endif
 
             @if ($page->page_intro)
             <div class="form-group">
@@ -21,24 +39,26 @@
             </div>
             @endif
 
-            @if ($page->section_title)
-            <h3>Section title</h3>
-            <input type="text" id="defaultContactFormName" class="form-control mb-4" value="{{ $page->section_title }}"
-                name="section_title">
-            @endif
+            @if ($page->page_title !== 'blog' and $page->page_title !== 'contact')
+                @if ($page->section_title)
+                <h3>Section title</h3>
+                <input type="text" id="defaultContactFormName" class="form-control mb-4" value="{{ $page->section_title }}"
+                    name="section_title">
+                @endif
 
-            @if ($page->content)
-            <div class="form-group">
-                <h3>Section content</h3>
-                <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3"
-                    name="page_content">{{ $page->content }}</textarea>
-            </div>
-            @endif
+                @if ($page->content)
+                <div class="form-group">
+                    <h3>Section content</h3>
+                    <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3"
+                        name="page_content">{{ $page->content }}</textarea>
+                </div>
+                @endif
 
-            @if ($page->button_text)
-            <h3>Button text</h3>
-            <input type="text" id="defaultContactFormName" class="form-control mb-4" value="{{ $page->button_text }}"
-                name="button_text">
+                @if ($page->button_text)
+                <h3>Button text</h3>
+                <input type="text" id="defaultContactFormName" class="form-control mb-4" value="{{ $page->button_text }}"
+                    name="button_text">
+                @endif
             @endif
 
             <div class="form-group">

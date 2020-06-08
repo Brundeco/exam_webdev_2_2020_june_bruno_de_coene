@@ -2,6 +2,8 @@
 
 @section('content')
 
+{{-- {{ dd($posts) }} --}}
+
 @foreach ($posts as $item)
 <div class="blogpost-wrapper">
     <div class="blogpost-left">

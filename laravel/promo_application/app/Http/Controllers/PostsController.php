@@ -9,15 +9,15 @@ use Illuminate\Http\Request;
 
 class PostsController extends Controller
 {
-    public function getIndex() {
+    // public function getIndex() {
 
-        $posts = Post::get();
-        $data = Page::get()->where('page_title', 'blog')->first();    
-        return view('pages.blog', [
-            'posts' => $posts,
-            'data' => $data
-        ]);
-    }
+    //     $posts = Post::get();
+    //     $data = Page::get()->where('page_title', 'blog')->first();    
+    //     return view('pages.blog', [
+    //         'posts' => $posts,
+    //         'data' => $data
+    //     ]);
+    // }
 
     public function getEdit() {
         $posts = Post::get();  

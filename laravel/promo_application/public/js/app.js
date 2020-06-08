@@ -43476,6 +43476,8 @@ __webpack_require__(/*! ./cursor */ "./resources/js/cursor.js");
 
 __webpack_require__(/*! ./autosize */ "./resources/js/autosize.js");
 
+__webpack_require__(/*! ./payment */ "./resources/js/payment.js");
+
 /***/ }),
 
 /***/ "./resources/js/autosize.js":
@@ -43754,6 +43756,28 @@ _toConsumableArray(document.querySelectorAll('a, button')).forEach(function (el)
 // document.addEventListener('mousemove', e => {
 //     cursor.setAttribute("style", "top: " + (e.pageY - scrollY) + "px; left: " + (e.pageX) + "px")
 // })
+
+/***/ }),
+
+/***/ "./resources/js/payment.js":
+/*!*********************************!*\
+  !*** ./resources/js/payment.js ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+var toggleDonations = document.querySelector('#toggleDonations');
+var closeDonations = document.querySelector('#closeDonations');
+var donationView = document.querySelector('.donation-wrapper');
+console.log(donationView);
+toggleDonations.addEventListener('click', function () {
+  donationView.style.display = 'block';
+  console.log('clicked');
+});
+closeDonations.addEventListener('click', function () {
+  donationView.style.display = 'none';
+  console.log('clicked');
+});
 
 /***/ }),
 
