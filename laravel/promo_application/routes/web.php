@@ -28,7 +28,6 @@ Route::post('/subscribe', 'NewsletterController@postSubscribe')->name('subscribe
 
 Route::get('/donate','MollieController@registerPayment')->name('mollie.register');
 Route::post('/mollie-payment','MollieController@preparePayment')->name('mollie.payment');
-
 Route::name('webhooks.mollie')->post('/webhooks/mollie', 'MollieController@postRegisterPayment');
 Route::get('/payment-success','MollieController@paymentSuccess')->name('payment.success');
 

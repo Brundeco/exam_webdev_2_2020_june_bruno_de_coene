@@ -7,7 +7,6 @@ use \App\Post;
 use \App\Payment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
-use Illuminate\Support\Facades\DB;
 
 class PageController extends Controller
 {
@@ -46,7 +45,7 @@ class PageController extends Controller
 
     public function getBlogContent() {
         
-        $posts = Post::get();
+        $posts = Post::paginate(3);
         $data = Page::get()->where('page_title', 'blog')->first();
         $donations = Payment::get()->where('public', 1);
   
