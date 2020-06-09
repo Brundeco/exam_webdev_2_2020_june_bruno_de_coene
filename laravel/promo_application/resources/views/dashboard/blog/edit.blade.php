@@ -3,7 +3,6 @@
 @section('content')
 
 <div class="table-wrapper">
-
     <form class=" border border-light p-5 admin-form" action="{{ route('blog.edit.post', $post->id) }}" method="post"
         enctype="multipart/form-data">
         @csrf
@@ -32,8 +31,8 @@
             <div class="form-group">
                 <h3>Post image</h3>
                 <input type="file" name="image" class="image-upload">
-                <input type="text" id="defaultContactFormName" class="form-control mb-4" value="" name="alt"
-                    placeholder="Short image alt text">
+                <input type="text" id="defaultContactFormName" class="form-control mb-4" value="{{ $post->alt }}"
+                    name="post_alt" placeholder="Short image alt text">
             </div>
 
             <div class="button-wrapper">

@@ -32,6 +32,8 @@ class DashboardController extends Controller
         $page->section_title = $r->section_title;
         $page->content = $r->page_content;
         $page->button_text = $r->button_text;
+        $page->button_link = $r->button_link;
+        $page->alt = $r->alt;
         $page->image = $r->image->store('uploads', 'public');
         $page->image = '/storage/'.$page->image;
 
@@ -78,6 +80,7 @@ class DashboardController extends Controller
         $post->intro = $r->post_intro;
         $post->body = $r->post_body;
         $post->slug = $r->post_title;
+        $post->alt = $r->post_alt;
         $post->image = $r->image->store('uploads', 'public');
         $post->image = '/storage/'.$post->image;
 

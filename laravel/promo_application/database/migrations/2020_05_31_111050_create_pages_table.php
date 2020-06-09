@@ -23,7 +23,10 @@ class CreatePagesTable extends Migration
             $table->text('content');
             
             $table->string('button_text');
+            $table->string('button_link')->nullable();
+
             $table->string('image');
+            $table->string('alt');
 
             $table->timestamps();
         });

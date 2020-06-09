@@ -43769,6 +43769,7 @@ _toConsumableArray(document.querySelectorAll('a, button')).forEach(function (el)
 var toggleDonations = document.querySelector('#toggleDonations');
 var closeDonations = document.querySelector('#closeDonations');
 var donationView = document.querySelector('.donation-wrapper');
+var donationPopUp = document.querySelector('.mollie-payment');
 console.log(donationView);
 toggleDonations.addEventListener('click', function () {
   donationView.style.display = 'block';
@@ -43778,6 +43779,14 @@ closeDonations.addEventListener('click', function () {
   donationView.style.display = 'none';
   console.log('clicked');
 });
+
+window.onscroll = function (ev) {
+  if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+    donationPopUp.style.display = 'none';
+  } else {
+    donationPopUp.style.display = 'block';
+  }
+};
 
 /***/ }),
 

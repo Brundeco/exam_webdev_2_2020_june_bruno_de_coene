@@ -165,7 +165,7 @@
                         <div class="footer-content">
                             <h3>Privacy Policy</h3>
                             <ul>
-                                <a href="">
+                                <a href="/policy">
                                     <li>Privacy</li>
                                 </a>
                             </ul>
