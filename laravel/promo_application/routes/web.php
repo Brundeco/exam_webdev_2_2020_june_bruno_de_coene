@@ -17,15 +17,14 @@ Route::get('/', 'PageController@getHomeContent')->name('home');
 Route::get('/about', 'PageController@getAboutContent')->name('about');
 Route::get('/contact', 'PageController@getContactContent')->name('contact');
 Route::get('/blog', 'PageController@getBlogContent')->name('blog');
-Route::get('/policy', 'PageController@getPolicyContent')->name('policy');
+Route::post('/contact', 'PageController@submitContactForm')->name('contact.post');
+Route::get('/contact/confirm', 'PageController@confirmContactForm')->name('mail.confirm');
 
+// Route::get('/blog', 'PostsController@getIndex')->name('blog');
 Route::post('/blog/donate', 'PostsController@postDonate')->name('blog.donate');
 Route::get('/blog/{id}/show', 'PostsController@getShow')->name('blog.show');
 
 Route::post('/subscribe', 'NewsletterController@postSubscribe')->name('subscribe');
-
-Route::post('/contact', 'PageController@submitContactForm')->name('contact.post');
-Route::get('/contact/confirm', 'PageController@confirmContactForm')->name('mail.confirm');
 
 Route::get('/donate','MollieController@registerPayment')->name('mollie.register');
 Route::post('/mollie-payment','MollieController@preparePayment')->name('mollie.payment');
@@ -50,6 +49,8 @@ Route::group(['middleware' => ['verified']], function () {
     Route::get('/blog/create', 'DashboardController@postCreateBlog')->name('blog.create');
     Route::post('/blog/store', 'DashboardController@postStoreBlog')->name('blog.store');
 
+    // Route::get('/about/edit', 'PageController@about')->name('about_edit');
+    // Route::get('/blog/edit', 'PostsController@getEdit')->name('blog.edit');
 } );
 
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');

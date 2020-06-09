@@ -10,7 +10,6 @@ use Illuminate\Support\Facades\Mail;
 
 class PageController extends Controller
 {
-
     public function getHomeContent() {
         
         $data = Page::get()->where('page_title', 'home')->first();
@@ -39,17 +38,6 @@ class PageController extends Controller
         $donations = Payment::get()->where('public', 1);
 
          return view('pages.contact', [
-            'data' => $data,
-            'donations' => $donations
-        ]);
-    }
-
-    public function getPolicyContent() {
-        
-        $data = Page::get()->where('page_title', 'policy')->first();
-        $donations = Payment::get()->where('public', 1);
-
-         return view('pages.policy', [
             'data' => $data,
             'donations' => $donations
         ]);

@@ -28,6 +28,7 @@ class DashboardController extends Controller
 
     //     if($r->id != $page->id) abort('403', 'Wrong page');
         
+<<<<<<< HEAD
     //     $page->page_intro = $r->page_intro;
     //     $page->section_title = $r->section_title;
     //     $page->content = $r->page_content;
@@ -78,6 +79,25 @@ class DashboardController extends Controller
          $page->update($page_data);
 
         // Redirect to the previous page successfully    
+=======
+        $page->page_intro = $r->page_intro;
+        $page->section_title = $r->section_title;
+        $page->content = $r->page_content;
+        $page->button_text = $r->button_text;
+        $page->image = $r->image->store('uploads', 'public');
+        $page->image = '/storage/'.$page->image;
+
+        // if($r->hasFile('image')) {
+            // dd($r->image);
+            // $page->image = $r->image->store('uploads', 'public');
+            // $page->image = '/storage/'.$page->image;
+            // $file = request()->image->store('uploads', 'public');
+            // $page->image = '/storage/'.$file;
+        // }
+
+        $page->save();
+
+>>>>>>> parent of 1c5f573... Policy page added. Responsiveness added. Dashboard logic updated.
         return redirect()->route('page.index');
 
     }
@@ -112,7 +132,6 @@ class DashboardController extends Controller
         $post->intro = $r->post_intro;
         $post->body = $r->post_body;
         $post->slug = $r->post_title;
-        $post->alt = $r->post_alt;
         $post->image = $r->image->store('uploads', 'public');
         $post->image = '/storage/'.$post->image;
 
