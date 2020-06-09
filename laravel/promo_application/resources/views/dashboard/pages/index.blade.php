@@ -2,6 +2,15 @@
 
 @section('content')
 
+<ul class="nav nav-tabs">
+    <li class="nav-item">
+        <a class="nav-link bg-aqua-active" href="#" id="english-link">EN</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#" id="spanish-link">ES</a>
+    </li>
+ </ul>
+
 <div class="table-wrapper">
     <div class="flex-row flex-row-head">
         <div class="flex-col flex-col-small">

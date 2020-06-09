@@ -43478,6 +43478,8 @@ __webpack_require__(/*! ./autosize */ "./resources/js/autosize.js");
 
 __webpack_require__(/*! ./payment */ "./resources/js/payment.js");
 
+__webpack_require__(/*! ./form */ "./resources/js/form.js");
+
 /***/ }),
 
 /***/ "./resources/js/autosize.js":
@@ -43756,6 +43758,32 @@ _toConsumableArray(document.querySelectorAll('a, button')).forEach(function (el)
 // document.addEventListener('mousemove', e => {
 //     cursor.setAttribute("style", "top: " + (e.pageY - scrollY) + "px; left: " + (e.pageX) + "px")
 // })
+
+/***/ }),
+
+/***/ "./resources/js/form.js":
+/*!******************************!*\
+  !*** ./resources/js/form.js ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+var $englishForm = $('#english-form');
+var $spanishForm = $('#spanish-form');
+var $englishLink = $('#english-link');
+var $spanishLink = $('#spanish-link');
+$englishLink.click(function () {
+  $englishLink.toggleClass('bg-aqua-active');
+  $englishForm.toggleClass('d-none');
+  $spanishLink.toggleClass('bg-aqua-active');
+  $spanishForm.toggleClass('d-none');
+});
+$spanishLink.click(function () {
+  $englishLink.toggleClass('bg-aqua-active');
+  $englishForm.toggleClass('d-none');
+  $spanishLink.toggleClass('bg-aqua-active');
+  $spanishForm.toggleClass('d-none');
+});
 
 /***/ }),
 

@@ -1474,6 +1474,10 @@ h6 {
   max-width: 1200px;
 }
 
+.add-top-margin {
+  margin-top: 200px;
+}
+
 .header-hero-image {
   width: 100vw;
   height: 80vh;
