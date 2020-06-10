@@ -1,7 +1,46 @@
-# Project Title
+# Examen webdev II Juni 2020
 
-Promo application built with Laravel.
+Promo website for Sleep Orbit application. Built with Laravel.
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+Navigate to 
+```bash
+cd laravel/promo_application/
+```
+
+Install composer packages
+
+```bash
+composer install
+```
+
+Install npm packages
+
+```bash
+npm i
+```
+
+Generate project key
+
+```bash
+php artisan key:generate
+```
+
+Generate tables
+
+```bash
+php artisan migrate
+```
+
+Generate table data
+
+```bash
+php artisan migrate --seed
+```
+
+Start app in browser
+
+```bash
+php artisan serve
+```
