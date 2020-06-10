@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::post('/lang', 'PageController@languageSwitcher')->name('lang');
+
 Route::get('/', 'PageController@getHomeContent')->name('home');
 Route::get('/about', 'PageController@getAboutContent')->name('about');
 Route::get('/contact', 'PageController@getContactContent')->name('contact');

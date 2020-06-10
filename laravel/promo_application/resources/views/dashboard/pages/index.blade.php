@@ -9,7 +9,7 @@
     <li class="nav-item">
         <a class="nav-link" href="#" id="spanish-link">ES</a>
     </li>
- </ul>
+</ul>
 
 <div class="table-wrapper">
     <div class="flex-row flex-row-head">
@@ -28,18 +28,11 @@
         <div class="flex-col flex-col-small">{{ $item->id }}</div>
         <div class="flex-col">{{ ucfirst($item->page_title) }}</div>
         <div class="flex-col">
-            {{-- @if ($item->page_title === 'blog')
-            <div class="flex-row clear-padding">
-                <a class="admin-btn btn-1" href="{{ route('blog.index') }}" class="btn">Edit</a>
-                <a class="admin-btn btn-3" href="{{ route($item->page_title) }}" class="btn">View</a>
-            </div>
-
-            @else --}}
             <div class="flex-row clear-padding">
                 <a class="admin-btn btn-1" href="{{ route('pages.edit', $item->id) }}" class="btn">Edit</a>
-                <a class="admin-btn btn-3" href="{{ route(  $item->page_title) }}" class="btn">View</a>
+                <a class="admin-btn btn-3" href="{{ route( str_replace('_nl','', $item->page_title)) }}"
+                    class="btn">View</a>
             </div>
-            {{-- @endif --}}
         </div>
     </div>
     @endforeach

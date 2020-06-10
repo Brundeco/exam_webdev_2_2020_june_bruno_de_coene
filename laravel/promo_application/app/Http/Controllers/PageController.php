@@ -11,9 +11,17 @@ use Illuminate\Support\Facades\Mail;
 class PageController extends Controller
 {
 
-    public function getHomeContent() {
+    public function languageSwitcher(Request $r) {
+
+        $r->session()->put('lang', $r->lang);
+        return back();
         
-        $data = Page::get()->where('page_title', 'home')->first();
+    }
+
+    public function getHomeContent(Request $r) {
+        
+        $data = Page::get()->where('page_title',
+        ($r->session()->get('lang') == 'nl' ) ? 'home_nl' : 'home' )->first();
         $donations = Payment::get()->where('public', 1);
 
          return view('pages.home', [
@@ -22,9 +30,9 @@ class PageController extends Controller
         ]);
     }
 
-    public function getAboutContent() {
+    public function getAboutContent(Request $r) {
         
-        $data = Page::get()->where('page_title', 'about')->first();
+        $data = Page::get()->where('page_title', ($r->session()->get('lang') == 'nl' ) ? 'about_nl' : 'about' )->first();
         $donations = Payment::get()->where('public', 1);
 
          return view('pages.about', [
@@ -33,9 +41,9 @@ class PageController extends Controller
         ]);
     }
 
-    public function getContactContent() {
+    public function getContactContent(Request $r) {
         
-        $data = Page::get()->where('page_title', 'contact')->first();
+        $data = Page::get()->where('page_title', ($r->session()->get('lang') == 'nl' ) ? 'contact_nl' : 'contact' )->first();
         $donations = Payment::get()->where('public', 1);
 
          return view('pages.contact', [
@@ -44,9 +52,9 @@ class PageController extends Controller
         ]);
     }
 
-    public function getPolicyContent() {
+    public function getPolicyContent(Request $r) {
         
-        $data = Page::get()->where('page_title', 'policy')->first();
+        $data = Page::get()->where('page_title', ($r->session()->get('lang') == 'nl' ) ? 'policy_nl' : 'policy' )->first();
         $donations = Payment::get()->where('public', 1);
 
          return view('pages.policy', [

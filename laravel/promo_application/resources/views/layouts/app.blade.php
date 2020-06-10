@@ -9,7 +9,6 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -17,8 +16,8 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-    
-    
+
+
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -28,8 +27,7 @@
     <div id="app">
 
         <div class="mollie-payment">
-            <a href="{{ route('mollie.register') }}"
-                class="admin-btn btn-save mollie-payment-btn">Donate</a>
+            <a href="{{ route('mollie.register') }}" class="admin-btn btn-save mollie-payment-btn">Donate</a>
             <button class="admin-btn admin-btn-3" id="toggleDonations">Donation list</button>
         </div>
 
@@ -50,47 +48,45 @@
                     </div>
                 </div>
                 @foreach($donations as $item)
-                    <div class="flex-row flex-row-donation">
-                        <div class="flex-col flex-col-med">
-                            <p>
-                                {{ $item->firstname . ' ' .  $item->lastname }}
-                            </p>
-                        </div>
-                        <div class="flex-col">
-                            <p>
-                                {{ ucfirst($item->message) }}
-                            </p>
-                        </div>
-                        <div class="flex-col">
-                            <p>
-                               € {{ bcdiv($item->amount, 1, 2) }}
-                            </p>
-                        </div>
+                <div class="flex-row flex-row-donation">
+                    <div class="flex-col flex-col-med">
+                        <p>
+                            {{ $item->firstname . ' ' .  $item->lastname }}
+                        </p>
                     </div>
+                    <div class="flex-col">
+                        <p>
+                            {{ ucfirst($item->message) }}
+                        </p>
+                    </div>
+                    <div class="flex-col">
+                        <p>
+                            € {{ bcdiv($item->amount, 1, 2) }}
+                        </p>
+                    </div>
+                </div>
                 @endforeach
             </div>
         </div>
 
         <header>
             @if(Auth::user())
-                <div class="user-active">
-                    <h2 class="right-margin-md">Welcome {{ Auth::user()->name }}. You can start editting</h2>
-                    <div class="flex-row-homepage">
-                        <a class="admin-btn btn-1" href="{{ route('page.index') }}">Dashboard
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item admin-btn btn-3" href="{{ route('logout') }}"
-                                onclick="event.preventDefault();
+            <div class="user-active">
+                <h2 class="right-margin-md">Welcome {{ Auth::user()->name }}. You can start editting</h2>
+                <div class="flex-row-homepage">
+                    <a class="admin-btn btn-1" href="{{ route('page.index') }}">Dashboard
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item admin-btn btn-3" href="{{ route('logout') }}" onclick="event.preventDefault();
                                          document.getElementById('logout-form').submit();">
-                                {{ __('Logout') }}
-                            </a>
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                style="display: none;">
-                                @csrf
-                            </form>
-                        </div>
+                            {{ __('Logout') }}
+                        </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
                     </div>
                 </div>
+            </div>
             @endif
 
             <div class="header-hero-image">
@@ -104,15 +100,25 @@
                                 <li><a href="/about">About</a></li>
                                 <li><a href="/blog">Blog</a></li>
                                 <li><a href="/contact">Contact</a></li>
-                                <!-- Authentication Links -->
                                 @guest
-                                    <li class="nav-item">
-                                        <a class="nav-link"
-                                            href="{{ route('login') }}">{{ __('Login') }}</a>
-                                    </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                </li>
                                 @else
                                 @endguest
                             </ul>
+                    </div>
+                    <div class="lang-switcher">
+                        <form action=" {{ route('lang') }} " method="post">
+                            @csrf
+                            <input type="hidden" name="lang" value="eng">
+                            <input type="submit" value="Eng">
+                        </form>
+                        <form action=" {{ route('lang') }} " method="post">
+                            @csrf
+                            <input type="hidden" name="lang" value="nl">
+                            <input type="submit" value="Nl">
+                        </form>
                     </div>
                     <div class="header-bottom">
                         <h1 class="brand-name">Sleep Orbit</h1>

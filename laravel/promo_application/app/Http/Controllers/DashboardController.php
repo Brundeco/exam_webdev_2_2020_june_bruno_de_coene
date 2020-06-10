@@ -24,62 +24,22 @@ class DashboardController extends Controller
         return view('dashboard.pages.edit', ['page' => $page]);
     }
 
-    // public function postEditPage(Page $page, Request $r) {
+    public function postEditPage(Page $page, Request $r) {
 
-    //     if($r->id != $page->id) abort('403', 'Wrong page');
+        if($r->id != $page->id) abort('403', 'Wrong page');
         
-    //     $page->page_intro = $r->page_intro;
-    //     $page->section_title = $r->section_title;
-    //     $page->content = $r->page_content;
-    //     $page->button_text = $r->button_text;
-    //     $page->button_link = $r->button_link;
-    //     $page->alt = $r->alt;
-    //     $page->image = $r->image->store('uploads', 'public');
-    //     $page->image = '/storage/'.$page->image;
+        $page->page_intro = $r->page_intro;
+        $page->section_title = $r->section_title;
+        $page->content = $r->page_content;
+        $page->button_text = $r->button_text;
+        $page->button_link = $r->button_link;
+        $page->alt = $r->alt;
+        $page->image = $r->image->store('uploads', 'public');
+        $page->image = '/storage/'.$page->image;
 
-    //     // if($r->hasFile('image')) {
-    //         // dd($r->image);
-    //         // $page->image = $r->image->store('uploads', 'public');
-    //         // $page->image = '/storage/'.$page->image;
-    //         // $file = request()->image->store('uploads', 'public');
-    //         // $page->image = '/storage/'.$file;
-    //     // }
+        $page->save();
 
-    //     $page->save();
-
-    //     return redirect()->route('page.index');
-    // }
-
-
-    public function postEditPage($id, Request $r) {
-
-        // dd($r);
-
-        $page_data = [
-            'en' => [
-                'page_title' => $r->input('en_page_title'),
-                'page_intro' => $r->input('en_page_intro'),
-                'section_title' => $r->input('en_section_title'),
-                'content' => $r->input('en_content'),
-                'button_text' => $r->input('en_button_text'),
-                'button_link' => $r->input('en_button_link')
-            ],
-            'nl' => [
-                'page_title' => $r->input('nl_page_title'),
-                'page_intro' => $r->input('nl_page_intro'),
-                'section_title' => $r->input('nl_section_title'),
-                'content' => $r->input('nl_content'),
-                'button_text' => $r->input('nl_button_text'),
-                'button_link' => $r->input('nl_button_link')
-            ],
-         ];
-
-         $page = Page::findOrFail($id);
-         $page->update($page_data);
-
-        // Redirect to the previous page successfully    
         return redirect()->route('page.index');
-
     }
 
     public function getIndexBlog() {

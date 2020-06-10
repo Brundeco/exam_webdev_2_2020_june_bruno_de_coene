@@ -20,9 +20,6 @@
     </div>
     @foreach ($posts as $item)
     <div class="flex-row flex-row-color-1">
-        {{-- <div class="flex-col blog-thumbnail">
-            <img src="{{ $item->image }}" alt="">
-        </div> --}}
         <div class="flex-col flex-col-small">{{ $item->id }}</div>
         <div class="flex-col">{{ ucfirst($item->title) }}</div>
        
