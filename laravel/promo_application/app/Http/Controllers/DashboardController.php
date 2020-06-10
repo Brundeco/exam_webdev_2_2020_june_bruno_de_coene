@@ -42,6 +42,7 @@ class DashboardController extends Controller
         return redirect()->route('page.index');
     }
 
+
     public function getIndexBlog() {
 
         $posts = Post::all();
@@ -72,7 +73,6 @@ class DashboardController extends Controller
         $post->intro = $r->post_intro;
         $post->body = $r->post_body;
         $post->slug = $r->post_title;
-        $post->alt = $r->post_alt;
         $post->image = $r->image->store('uploads', 'public');
         $post->image = '/storage/'.$post->image;
 

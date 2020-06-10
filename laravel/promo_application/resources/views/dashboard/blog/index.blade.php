@@ -22,7 +22,6 @@
     <div class="flex-row flex-row-color-1">
         <div class="flex-col flex-col-small">{{ $item->id }}</div>
         <div class="flex-col">{{ ucfirst($item->title) }}</div>
-       
         <div class="flex-col">
             <div class="flex-row">
                 <a class="admin-btn btn-1" href="{{ route('blog.edit.get', $item->id) }}" class="btn">Edit</a>
@@ -31,8 +30,7 @@
                     <input type="hidden" value="{{ $item->id }}">
                     <button class="admin-btn btn-delete">Delete</button>
                 </form>
-                <a class="admin-btn btn-3 margin-left-sm" href="{{ route('blog.show', $item->id) }}"
-                    class="btn">View</a>
+                <a class="admin-btn btn-3 margin-left-sm" href="{{ route('blog.show', $item->id) }}" class="btn">View</a>
             </div>
         </div>
     </div>

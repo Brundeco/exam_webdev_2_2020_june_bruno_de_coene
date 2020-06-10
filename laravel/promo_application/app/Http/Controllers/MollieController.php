@@ -37,7 +37,7 @@ class MollieController extends Controller
         ],
         'description' => 'Payment By codehunger', 
         'redirectUrl' => route('payment.success'), // after the payment completion where you to redirect
-        'webhookUrl' => 'http://acb1399d36ee.ngrok.io/webhooks/mollie'
+        'webhookUrl' => 'http://a1d358b46522.ngrok.io/webhooks/mollie'
         ]);
 
         $deposit = New Payment();
